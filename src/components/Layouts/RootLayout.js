@@ -91,10 +91,10 @@ const RootLayout = ({ children }) => {
   };
 
   const navigateSignUpPage = () => {
-    router.push("/signup");
+    router.push("https://app.jomma.online/jomma/r/v1/app/signup");
   };
   const navigateLogInPage = () => {
-    router.push("/login");
+    router.push("https://app.jomma.online/jomma/r/v1/app/login");
   };
 
   function closeOffcanvasProgrammatically() {
@@ -111,23 +111,7 @@ const RootLayout = ({ children }) => {
     closeOffcanvasProgrammatically();
   };
 
-  /*   useEffect(() => {
-    window.sessionStorage.isMySessionActive = "true";
-    const isMySessionActive = window.sessionStorage.getItem('isMySessionActive');
-    if(isMySessionActive && isMyProjectStart){
-      console.log('enter')
-      deleteCookie('userId');
-  deleteCookie('mobileNumber');
-  deleteCookie('accessToken');
-      window.sessionStorage.isMySessionActive = "false";
-      setIsMyProjectStart(false);
-    }
-   
-  }, []); */
-
-  /* deleteCookie('userId');
-  deleteCookie('mobileNumber');
-  deleteCookie('accessToken'); */
+ 
 
   const handelLogOut = async () => {
     const response = await fetch(
@@ -211,7 +195,7 @@ const RootLayout = ({ children }) => {
                   <Image src={hambuger} alt="" className="hamburger-size" />
                 </div>
               </button>
-              <Link href="/home">
+              <Link href="${process.env.NEXT_PUBLIC_HOME_URL}">
                 <Image
                   src={Mobilelogo}
                   alt=""
@@ -338,7 +322,7 @@ const RootLayout = ({ children }) => {
                 )}
 
                 <Link
-                  href={"/markets"}
+                  href={`${process.env.NEXT_PUBLIC_HOME_URL}`}
                   className="d-flex align-items-center mobile-drawer-image-link mb-4"
                   onClick={closeOffcanvasProgrammatically}
                 >
@@ -396,7 +380,7 @@ const RootLayout = ({ children }) => {
                         <p className="mb-0 text-white">Signup</p>
                       </Link>
                       <Link
-                        href={"/login"}
+                        href={"https://app.jomma.online/jomma/r/v1/app/login"}
                         className="d-flex align-items-center mobile-drawer-image-link mb-4"
                         onClick={closeOffcanvasProgrammatically}
                       >
@@ -411,7 +395,7 @@ const RootLayout = ({ children }) => {
               </div>
             </div>
 
-            <Link className="navbar-brand" href="/home">
+            <Link className="navbar-brand" href="https://app.jomma.online/jomma/r/v1/app/home">
               <Image src={logo} alt="" className="show-logo-pc" />
               <div className="show-logo-mobile show-logo-tab">
                 {isLogin ? (
@@ -506,39 +490,14 @@ const RootLayout = ({ children }) => {
                   } nav-item`}
                 >
                   <Link
-                    className={`${
-                      router.pathname === "/markets"
-                        ? "active-nav-link"
-                        : "text-dark"
-                    } nav-link  px-4 font-w-400`}
+                    className={`nav-link  px-4 font-w-400`}
                     aria-current="page"
-                    href={"/markets"}
+                    href={"https://app.jomma.online/jomma/r/v1/app/markets"}
                   >
                     Markets
                   </Link>
                   <div className="underline"></div>
                 </li>
-
-                {isLogin ? (
-                  <li
-                    className={`${
-                      router.pathname === "/dashboard" ? "active-nav-link" : ""
-                    } nav-item`}
-                  >
-                    <Link
-                      className={`${
-                        router.pathname === "/dashboard"
-                          ? "active-nav-link"
-                          : "text-dark"
-                      } nav-link px-4 font-w-400`}
-                      aria-current="page"
-                      href={"/dashboard"}
-                    >
-                      Dashboard
-                    </Link>
-                    <div className="underline"></div>
-                  </li>
-                ) : null}
 
                 <li
                   className={`${
@@ -546,14 +505,10 @@ const RootLayout = ({ children }) => {
                   } nav-item`}
                 >
                   <button
-                    className={`${
-                      router.pathname === "/prefund"
-                        ? "active-nav-link"
-                        : "text-dark"
-                    } nav-link px-4 font-w-400`}
+                    className={`nav-link px-4 font-w-400`}
                     aria-current="page"
                     style={{ border: "none", backgroundColor: "transparent" }}
-                    onClick={handleCheckBoComplete}
+                    href={"https://app.jomma.online/jomma/r/v1/app/prefund"}
                   >
                     BO Prefund & Withdraw
                   </button>
@@ -568,58 +523,7 @@ const RootLayout = ({ children }) => {
                 )}
               </ul>
               <div className="d-flex align-items-center">
-                {isLogin ? (
-                  <Dropdown>
-                    <Dropdown.Toggle
-                      className="custom-dropdown-toggle"
-                      id="dropdown-basic"
-                    >
-                      <div className="mb-1">
-                        <Image src={UserIcon} alt="fsdfds" />
-                        <Image
-                          src={UserIconDrop}
-                          width={14}
-                          height={12}
-                          alt="fsdfds"
-                        />
-                      </div>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu style={{ padding: "0" }}>
-                      <Link className="dropdown-item" href="/help">
-                        <p className="mb-0 py-2">Help</p>
-                      </Link>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "0.5px",
-                          backgroundColor: "#DCDCDD",
-                        }}
-                      ></div>
-                      <div
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => openChangeModal("isClickedChangePass")}
-                      >
-                        <p className="mb-0 py-2">Change Password</p>
-                      </div>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "0.5px",
-                          backgroundColor: "#DCDCDD",
-                        }}
-                      ></div>
-                      <div
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                        onClick={handelLogOut}
-                      >
-                        <p className="mb-0 py-2">Logout</p>
-                      </div>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                ) : (
+               
                   <>
                     <div className="me-3">
                       <ButtonSecondary
@@ -637,7 +541,6 @@ const RootLayout = ({ children }) => {
                       Sign Up
                     </ButtonPrimary>
                   </>
-                )}
               </div>
             </div>
           </div>
