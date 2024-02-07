@@ -13,31 +13,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Dropdown } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Invest from "../../assets/images/Invest.svg";
-import Home from "../../assets/images/home.svg";
-import Bonds from "../../assets/images/bonds.svg";
-import Dashboard from "../../assets/images/dashboard.svg";
-import InvestmentThemes from "../../assets/images/investment-themes.svg";
 import Login from "../../assets/images/login.svg";
-import Logout from "../../assets/images/logout.svg";
 import Markets from "../../assets/images/markets.svg";
 import Mobilelogo from "../../assets/images/mobile_jomma_logo.svg";
 import Mutualfunds from "../../assets/images/mutualfunds.svg";
 import Prefund from "../../assets/images/prefund.svg";
 import Signup from "../../assets/images/signup.svg";
-import Stocks from "../../assets/images/stocks.svg";
-import UserIconDrop from "../../assets/images/user-dropdown.svg";
-import UserIcon from "../../assets/images/user-icon.svg";
 import ButtonPrimary from "../UI/ButtonPrimary";
 import ButtonSecondary from "../UI/ButtonSecondary";
-import PasswordChangeModal from "../UI/PasswordChangeModal";
 import { useGetGlobalInfoQuery } from "@/redux/api/apiSlice";
-import OpenBoModal from "../Shared/Modals/OpenBoModal";
-import { userInformation } from "@/redux/features/userInformation/userInformationSlice";
-import { useAppDispatch } from "@/redux/hooks";
+
 import { useSelector } from "react-redux";
 
 const RootLayout = ({ children }) => {
@@ -85,16 +73,13 @@ const RootLayout = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getCookies("accessToken").accessToken]);
 
-  const openChangeModal = (conformation) => {
-    setDataForModal(conformation);
-    setModalShow(true);
-  };
+
 
   const navigateSignUpPage = () => {
-    router.push("https://app.jomma.online/jomma/r/v1/app/signup");
+    router.push(`${process.env.NEXT_PUBLIC_SIGNUP_URL}`);
   };
   const navigateLogInPage = () => {
-    router.push("https://app.jomma.online/jomma/r/v1/app/login");
+    router.push(`${process.env.NEXT_PUBLIC_LOGIN_URL}`);
   };
 
   function closeOffcanvasProgrammatically() {
@@ -113,23 +98,6 @@ const RootLayout = ({ children }) => {
 
  
 
-  const handelLogOut = async () => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API_URL}/user/logout`,
-      {
-        method: "POST",
-      }
-    );
-
-    if (response.ok) {
-      deleteCookie("accessToken");
-      setIsLogin(false);
-      const baseUrl = window.location.origin;
-      window.location.href = `${baseUrl}/login`;
-      //router.push('/login');
-    }
-  };
-
   const handleButtonClick = async (e) => {
     e.preventDefault();
     try {
@@ -143,9 +111,9 @@ const RootLayout = ({ children }) => {
     }
   };
 
-  const userInfoRefetchApi = useSelector((state) => state.userInfo.value);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
+ /*  const userInfoRefetchApi = useSelector((state) => state.userInfo.value);
+  const dispatch = useAppDispatch(); */
+  /* useEffect(() => {
     const fetchData = async () => {
       const accessToken = getCookies("accessToken").accessToken; // Assuming you have a function to get the access token.
 
@@ -163,15 +131,11 @@ const RootLayout = ({ children }) => {
       }
     };
     fetchData();
-  }, [getCookies("accessToken").accessToken, userInfoRefetchApi]);
+  }, [getCookies("accessToken").accessToken, userInfoRefetchApi]); */
 
   return (
     <>
-      <PasswordChangeModal
-        data={dataForModal}
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+     
       <Head>
         {/* <link
 					href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@100;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -192,16 +156,16 @@ const RootLayout = ({ children }) => {
                 aria-controls="offcanvasDrawerMenu"
               >
                 <div className="d-flex align-items-center">
-                  <Image src={hambuger} alt="" className="hamburger-size" />
+                  <Image src={hambuger} alt="Jomma Hamburger" className="hamburger-size" />
                 </div>
               </button>
               <Link href="#">
                 <Image
                   src={Mobilelogo}
-                  alt=""
+                  alt="Jomma Logo"
                   className="show-logo-mobile ps-1"
                 />
-                <Image src={logo} alt="" className="show-logo-tab ps-1" />
+                <Image src={logo} alt="Jomma Logo" className="show-logo-tab ps-1" />
               </Link>
             </div>
 
@@ -225,104 +189,21 @@ const RootLayout = ({ children }) => {
                 ></button>
               </div>
               <div className="offcanvas-body ps-4">
-                {isLogin ? (
-                  <>
-                    <Link
-                      href={"/home"}
-                      className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                      onClick={closeOffcanvasProgrammatically}
-                    >
-                      <div className="mobile-drawer-image-area">
-                        <Image src={Home} alt="" width={20} height={20} />
-                      </div>
-                      <p className="mb-0 text-white">Home</p>
-                    </Link>
-                    <Link
-                      href={"/stocks"}
-                      className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                      onClick={closeOffcanvasProgrammatically}
-                    >
-                      <div className="mobile-drawer-image-area">
-                        <Image src={Stocks} alt="" width={20} height={20} />
-                      </div>
-                      <p className="mb-0 text-white">Stocks</p>
-                    </Link>
-                    <Link
-                      href={"/investment-themes"}
-                      className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                      onClick={closeOffcanvasProgrammatically}
-                    >
-                      <div className="mobile-drawer-image-area">
-                        <Image
-                          src={InvestmentThemes}
-                          alt=""
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-                      <p className="mb-0 text-white">Investment Themes</p>
-                    </Link>
-                    <Link
-                      href={"/mutual-funds"}
-                      className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                      onClick={closeOffcanvasProgrammatically}
-                    >
-                      <div className="mobile-drawer-image-area">
-                        <Image
-                          src={Mutualfunds}
-                          alt=""
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-                      <p className="mb-0 text-white">Mutual Funds</p>
-                    </Link>
-                    <Link
-                      href={"/bonds"}
-                      className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                      onClick={closeOffcanvasProgrammatically}
-                    >
-                      <div className="mobile-drawer-image-area">
-                        <Image src={Bonds} alt="" width={20} height={20} />
-                      </div>
-                      <p className="mb-0 text-white">Private Bonds</p>
-                    </Link>
-
-                    <div
-                      className="my-5"
-                      style={{
-                        width: "100%",
-                        height: "1px",
-                        backgroundColor: "#DCDCDD",
-                      }}
-                    ></div>
-
-                    <Link
-                      href={"/dashboard"}
-                      className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                      onClick={closeOffcanvasProgrammatically}
-                    >
-                      <div className="mobile-drawer-image-area">
-                        <Image src={Dashboard} alt="" width={20} height={20} />
-                      </div>
-                      <p className="mb-0 text-white">Dashboard</p>
-                    </Link>
-                  </>
-                ) : (
+                
                   <Link
-                    href={"/home"}
+                    href={`${process.env.NEXT_PUBLIC_HOME_URL}`}
                     className="d-flex align-items-center mobile-drawer-image-link mb-4"
                     onClick={closeOffcanvasProgrammatically}
                   >
                     <div className="mobile-drawer-image-area">
-                      <Image src={Invest} alt="" width={20} height={20} />
+                      <Image src={Invest} alt="Jomma Investment" width={20} height={20} />
                     </div>
                     <p className="mb-0 text-white">Invest</p>
                   </Link>
-                )}
+              
 
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_HOME_URL}`}
+                  href={`${process.env.NEXT_PUBLIC_MARKET_URL}`}
                   className="d-flex align-items-center mobile-drawer-image-link mb-4"
                   onClick={closeOffcanvasProgrammatically}
                 >
@@ -343,34 +224,9 @@ const RootLayout = ({ children }) => {
                 </button>
 
                 <div className="fixed-bottom p-4">
-                  {isLogin ? (
-                    <>
-                      {/* <Link
-												href={''}
-												className="d-flex align-items-center mobile-drawer-image-link mb-4"
-												onClick={closeOffcanvasProgrammatically}
-											>
-												<div className="mobile-drawer-image-area">
-													<Image src={Setting} alt="" width={20} height={20} />
-												</div>
-												<p className="mb-0 text-white">Setting</p>
-											</Link> */}
-
-                      <Link
-                        href={"/login"}
-                        className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                        onClick={handelLogoutMobileView}
-                      >
-                        <div className="mobile-drawer-image-area">
-                          <Image src={Logout} alt="" width={20} height={20} />
-                        </div>
-                        <p className="mb-0 text-white">Logout</p>
-                      </Link>
-                    </>
-                  ) : (
                     <>
                       <Link
-                        href={"/signup"}
+                        href={`${process.env.NEXT_PUBLIC_SIGNUP_URL}`}
                         className="d-flex align-items-center mobile-drawer-image-link mb-4"
                         onClick={closeOffcanvasProgrammatically}
                       >
@@ -380,7 +236,7 @@ const RootLayout = ({ children }) => {
                         <p className="mb-0 text-white">Signup</p>
                       </Link>
                       <Link
-                        href={"https://app.jomma.online/jomma/r/v1/app/login"}
+                        href={`${process.env.NEXT_PUBLIC_LOGIN_URL}`}
                         className="d-flex align-items-center mobile-drawer-image-link mb-4"
                         onClick={closeOffcanvasProgrammatically}
                       >
@@ -390,73 +246,20 @@ const RootLayout = ({ children }) => {
                         <p className="mb-0 text-white">Login</p>
                       </Link>
                     </>
-                  )}
                 </div>
               </div>
             </div>
 
-            <Link className="navbar-brand" href="https://app.jomma.online/jomma/r/v1/app/home">
+            <Link className="navbar-brand" href={router.basePath}>
               <Image src={logo} alt="" className="show-logo-pc" />
               <div className="show-logo-mobile show-logo-tab">
-                {isLogin ? (
-                  <Dropdown>
-                    <Dropdown.Toggle
-                      className="custom-dropdown-toggle"
-                      id="dropdown-basic"
-                    >
-                      <div className="mb-1">
-                        <Image src={UserIcon} alt="fsdfds" />
-                        <Image
-                          src={UserIconDrop}
-                          width={14}
-                          height={12}
-                          alt="fsdfds"
-                        />
-                      </div>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu style={{ padding: "0" }}>
-                      <Link className="dropdown-item" href="/help">
-                        <p className="mb-0 py-2">Help</p>
-                      </Link>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "0.5px",
-                          backgroundColor: "#DCDCDD",
-                        }}
-                      ></div>
-                      <div
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => openChangeModal("isClickedChangePass")}
-                      >
-                        <p className="mb-0 py-2">Change Password</p>
-                      </div>
-                      <div
-                        style={{
-                          width: "100%",
-                          height: "0.5px",
-                          backgroundColor: "#DCDCDD",
-                        }}
-                      ></div>
-                      <div
-                        className="dropdown-item"
-                        style={{ cursor: "pointer" }}
-                        onClick={handelLogOut}
-                      >
-                        <p className="mb-0 py-2">Logout</p>
-                      </div>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                ) : (
+               {/* 
                   <ButtonSecondary
                     onClick={handleButtonClick}
                     size="custom-small"
                   >
                     {`${router.pathname === "/login" ? "Signup" : "Login"}`}
-                  </ButtonSecondary>
-                )}
+                  </ButtonSecondary> */}
               </div>
             </Link>
 
@@ -466,33 +269,25 @@ const RootLayout = ({ children }) => {
             >
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li
-                  className={`${
-                    router.pathname === "/home" ? "active-nav-link" : ""
-                  } nav-item`}
+                  className={`nav-item`}
                 >
                   <Link
-                    className={`${
-                      router.pathname === "/home"
-                        ? "active-nav-link"
-                        : "text-dark"
-                    } nav-link px-4 font-w-400`}
+                    className={`text-dark nav-link px-4 font-w-400`}
                     aria-current="page"
-                    href={"/home"}
+                    href={`${process.env.NEXT_PUBLIC_HOME_URL}`}
                   >
-                    {isLogin ? "Home" : "Invest"}
+                   Invest
                   </Link>
                   <div className="underline"></div>
                 </li>
 
                 <li
-                  className={`${
-                    router.pathname === "/markets" ? "active-nav-link" : ""
-                  } nav-item`}
+                  className={`nav-item`}
                 >
                   <Link
-                    className={`nav-link  px-4 font-w-400`}
+                    className={`text-dark nav-link  px-4 font-w-400`}
                     aria-current="page"
-                    href={"https://app.jomma.online/jomma/r/v1/app/markets"}
+                    href={`${process.env.NEXT_PUBLIC_MARKET_URL}`}
                   >
                     Markets
                   </Link>
@@ -500,27 +295,18 @@ const RootLayout = ({ children }) => {
                 </li>
 
                 <li
-                  className={`${
-                    router.pathname === "/prefund" ? "active-nav-link" : ""
-                  } nav-item`}
+                  className={`nav-item`}
                 >
-                  <button
-                    className={`nav-link px-4 font-w-400`}
+                  <Link
+                    className={`text-dark nav-link px-4 font-w-400`}
                     aria-current="page"
                     style={{ border: "none", backgroundColor: "transparent" }}
-                    href={"https://app.jomma.online/jomma/r/v1/app/prefund"}
+                    href={`${process.env.NEXT_PUBLIC_PREFUND_URL}`}
                   >
                     BO Prefund & Withdraw
-                  </button>
+                  </Link>
                   <div className="underline"></div>
                 </li>
-                {boModalShow && (
-                  <OpenBoModal
-                    data={data?.data}
-                    show={boModalShow}
-                    onHide={() => setBoModalShow(false)}
-                  />
-                )}
               </ul>
               <div className="d-flex align-items-center">
                
@@ -582,13 +368,13 @@ const RootLayout = ({ children }) => {
                   </Link>
                 </div>
                 <Link
-                  href={"#"}
+                  href={`${process.env.NEXT_PUBLIC_PRIVACY_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href={"#"}
+                  href={`${process.env.NEXT_PUBLIC_TERMS_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Terms & Conditions
@@ -596,20 +382,20 @@ const RootLayout = ({ children }) => {
               </div>
               <div className="col-lg-2 col-md-3 col-12">
                 <Link
-                  href={"/stocks"}
+                  href={`${process.env.NEXT_PUBLIC_STOCKS_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Stocks
                 </Link>
 
                 <Link
-                  href={"/bonds"}
+                  href={`${process.env.NEXT_PUBLIC_BOND_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Private Bonds
                 </Link>
                 <Link
-                  href={"/mutual-funds"}
+                  href={`${process.env.NEXT_PUBLIC_FUND_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Mutual Funds
@@ -617,20 +403,19 @@ const RootLayout = ({ children }) => {
               </div>
               <div className="col-lg-3 col-md-3 col-12 mb-0 mb-md-0">
                 <Link
-                  href={"/markets"}
+                  href={`${process.env.NEXT_PUBLIC_MARKET_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Markets
                 </Link>
-                <button
-                  onClick={handleCheckBoComplete}
-                  style={{ border: "none", backgroundColor: "transparent" }}
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_PREFUND_URL}`}
                   className="d-block mb-lg-3 mb-2 px-0 footer-font-size text-white text-decoration-none"
                 >
                   BO Prefund & Withdraw
-                </button>
+                </Link>
                 <Link
-                  href={"/investment-themes"}
+                  href={`${process.env.NEXT_PUBLIC_STOCKS_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Investment Themes
@@ -647,7 +432,7 @@ const RootLayout = ({ children }) => {
                   Write to Us with your questions
                 </p>
                 <Link
-                  href={"/help"}
+                  href={`${process.env.NEXT_PUBLIC_HELP_URL}`}
                   className="text-white text-decoration-none footer-home-button footer-text"
                 >
                   Go to Help Page

@@ -55,33 +55,23 @@ const InvestCalculator = ({ page }) => {
 
 	const handlePageRedirect = (redirectPage) =>{
 		if(redirectPage === "themematic"){
-			router.push('/investment-themes');
+			router.push(`${process.env.NEXT_PUBLIC_THEMATIC_URL}`);
 		}else if(redirectPage ==="mutual"){
-			router.push('/mutual-funds');
+			router.push(`${process.env.NEXT_PUBLIC_FUND_URL}`);
 		}else if(redirectPage ==="saving"){
-			router.push('/saving');
+			router.push(`${process.env.NEXT_PUBLIC_SAVING_URL}`);
 		}else{
-			router.push('/stocks');
+			router.push(`${process.env.NEXT_PUBLIC_STOCKS_URL}`);
 		}
 		//router.push()
 	}
 
 	return (
 		<div
-			className={` pt-2 ${
-				page === 'home'
-					? ''
-					: styles.investCalculatorSectionLanding
-			}`}
+			className={` pt-2 ${styles.investCalculatorSectionLanding}`}
 		>
 			<div className="container">
-				{page === 'home' ? (
-					<>
-						<p className={`${styles.featuredTitle} mb-0 mt-lg-4 mt-2 mb-lg-2`}>
-							Investment Calculator
-						</p>
-					</>
-				) : (
+				
 					<>
 						<p
 							className={`${styles.investCalculatorTitleLanding} mb-0 text-center`}
@@ -89,7 +79,7 @@ const InvestCalculator = ({ page }) => {
 							Investment Calculator
 						</p>
 					</>
-				)}
+
 
 				<div className={`${styles.calculatorInputArea}`}>
 					<div className="d-flex align-items-center mb-2 mb-lg-0">
@@ -198,7 +188,7 @@ const InvestCalculator = ({ page }) => {
                       <div className="d-flex justify-content-center align-items-center flex-column">
                         <Image
                           src={thematic}
-                          alt="stock"
+                          alt="BRAC EPL Investments"
                           layout="responsive"
                           className={`${styles.productImageSize}`}
                         />
@@ -226,7 +216,7 @@ const InvestCalculator = ({ page }) => {
                       <div className="d-flex justify-content-center align-items-center flex-column">
                         <Image
                           src={mutual}
-                          alt="stock"
+                          alt="Mutual Funds"
                           layout=""
                           className={`${styles.productImageSize}`}
                         />
@@ -258,7 +248,7 @@ const InvestCalculator = ({ page }) => {
                     <div className="d-flex justify-content-center align-items-center flex-column">
                       <Image
                         src={stock}
-                        alt="stock"
+                        alt="Stocks"
                         layout=""
                         className={`${styles.productImageSize}`}
                       />
@@ -288,7 +278,7 @@ const InvestCalculator = ({ page }) => {
                     <div className="d-flex justify-content-center align-items-center flex-column">
                       <Image
                         src={planner}
-                        alt="planer"
+                        alt="Savings"
                         layout="responsive"
                         className={`${styles.productImageSize}`}
                       />

@@ -40,10 +40,10 @@ const LandingPage = () => {
 	}, []);
 
 	const handleGetStart = () => {
-		router.push('/home');
+		router.push(`${process.env.NEXT_PUBLIC_HOME_URL}`);
 	};
 	const handleGoMarketPage = () => {
-		router.push('/markets');
+		router.push(`${process.env.NEXT_PUBLIC_MARKET_URL}`);
 	};
 
 	return (
@@ -89,7 +89,7 @@ const LandingPage = () => {
 					<div className="col-lg-6 col-md-6 col-sm-12 col-12 landing-page-image-area">
 						<Image
 							src={landingImage1}
-							alt=""
+							alt="Jomma Investment Hompage"
 							layout="responsive"
 							className="landing-page-image"
 						/>
@@ -167,7 +167,7 @@ const LandingPage = () => {
 					<div className="row g-3 g-lg-5 g-md-4 mb-3">
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
-								<Image src={midway} alt="" className="partnerimage" />
+								<Image src={midway} alt="Midway Securities: Jomma Partner" className="partnerimage" />
 								<p className="mb-0 text-center partner-name">
 									Midway Securities Limited
 								</p>
@@ -175,7 +175,7 @@ const LandingPage = () => {
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
-								<Image src={brac} alt="" className="partnerimage" />
+								<Image src={brac} alt="BRAC EPL Investments Limited: Jomma Partner" className="partnerimage" />
 								<p className="mb-0 text-center partner-name">
 									Brac EPL Investments
 								</p>
@@ -183,7 +183,7 @@ const LandingPage = () => {
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
-								<Image src={edge} alt="" className="partnerimage" />
+								<Image src={edge} alt="Edge Asset Management: Jomma Partner" className="partnerimage" />
 								<p className="mb-0 text-center partner-name">
 									Edge Asset Management
 								</p>
@@ -191,7 +191,7 @@ const LandingPage = () => {
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
-								<Image src={santa} alt="" className="partnerimage" />
+								<Image src={santa} alt="Shanta Asset Management: Jomma Partner" className="partnerimage" />
 								<p className="mb-0 text-center partner-name">
 									Shanta Asset Management
 								</p>
