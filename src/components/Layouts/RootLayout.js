@@ -195,7 +195,7 @@ const RootLayout = ({ children }) => {
                   <Image src={hambuger} alt="" className="hamburger-size" />
                 </div>
               </button>
-              <Link href="${process.env.NEXT_PUBLIC_HOME_URL}">
+              <Link href="#">
                 <Image
                   src={Mobilelogo}
                   alt=""
@@ -582,13 +582,13 @@ const RootLayout = ({ children }) => {
                   </Link>
                 </div>
                 <Link
-                  href={"/privacy-policy"}
+                  href={"#"}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href={"/terms-and-conditions"}
+                  href={"#"}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
                   Terms & Conditions
