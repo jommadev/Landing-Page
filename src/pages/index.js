@@ -121,10 +121,10 @@ const LandingPage = () => {
 								onClick={handleGetStart}
 								size={!isMobileView ? 'custom-small' : 'custom-medium'}
 							>
-								<div className="d-flex justify-content-center align-items-center">
-									<Image src={btnInvestIcon} alt="icon" className="me-1" />
-									Start Investing
-								</div>
+							<div className="d-flex justify-content-center align-items-center">
+								<Image src={btnInvestIcon} alt="icon" className="me-1" />
+								Start Investing
+							</div>
 							</ButtonSecondary>
 						</div>
 					</div>

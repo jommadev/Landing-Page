@@ -253,13 +253,13 @@ const RootLayout = ({ children }) => {
             <Link className="navbar-brand" href={router.basePath}>
               <Image src={logo} alt="" className="show-logo-pc" />
               <div className="show-logo-mobile show-logo-tab">
-               {/* 
+               {
                   <ButtonSecondary
                     onClick={handleButtonClick}
                     size="custom-small"
                   >
                     {`${router.pathname === "/login" ? "Signup" : "Login"}`}
-                  </ButtonSecondary> */}
+                  </ButtonSecondary>}
               </div>
             </Link>
 
