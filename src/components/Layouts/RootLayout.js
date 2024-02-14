@@ -389,11 +389,13 @@ const RootLayout = ({ children }) => {
                 </Link>
 
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_BOND_URL}`}
+                  href={`${process.env.NEXT_PUBLIC_STOCKS_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
                 >
-                  Private Bonds
+                  Investment Themes
                 </Link>
+
+                
                 <Link
                   href={`${process.env.NEXT_PUBLIC_FUND_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
@@ -402,6 +404,12 @@ const RootLayout = ({ children }) => {
                 </Link>
               </div>
               <div className="col-lg-3 col-md-3 col-12 mb-0 mb-md-0">
+              <Link
+                  href={`${process.env.NEXT_PUBLIC_BOND_URL}`}
+                  className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
+                >
+                  Private Bonds
+                </Link>
                 <Link
                   href={`${process.env.NEXT_PUBLIC_MARKET_URL}`}
                   className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
@@ -414,12 +422,7 @@ const RootLayout = ({ children }) => {
                 >
                   BO Prefund & Withdraw
                 </Link>
-                <Link
-                  href={`${process.env.NEXT_PUBLIC_STOCKS_URL}`}
-                  className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"
-                >
-                  Investment Themes
-                </Link>
+                
                 {/* <Link
 									href={''}
 									className="d-block mb-lg-3 mb-2 footer-font-size text-white text-decoration-none"

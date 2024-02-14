@@ -115,8 +115,8 @@ const LandingPage = () => {
 							<li className="mb-0 choose-us-info">
 								Select Stocks, Investment Themes, Mutual Funds or Bonds
 							</li>
-							<li className="mb-0 choose-us-info">Enter investment amount</li>
-							<li className="mb-0 choose-us-info mb-3">Confirm order</li>
+							<li className="mb-0 choose-us-info">Enter Investment Amount</li>
+							<li className="mb-0 choose-us-info mb-3">Confirm Order</li>
 							<ButtonSecondary
 								onClick={handleGetStart}
 								size={!isMobileView ? 'custom-small' : 'custom-medium'}
@@ -169,7 +169,7 @@ const LandingPage = () => {
 							<div className="partner">
 								<Image src={midway} alt="Midway Securities: Jomma Partner" className="partnerimage" />
 								<p className="mb-0 text-center partner-name">
-									Midway Securities Limited
+									Midway Securities
 								</p>
 							</div>
 						</div>
