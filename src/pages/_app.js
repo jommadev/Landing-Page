@@ -28,10 +28,10 @@ export default function App({ Component, pageProps }) {
       </main>
 
       {/* Load Bootstrap JavaScript using next/script */}
-      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
+      <Script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
 	  
 	  {/* Facebook Pixel Code */}
-      <Script strategy="lazyOnload">
+      <Script id="fb-pixel" strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -47,8 +47,8 @@ export default function App({ Component, pageProps }) {
       </Script>
 
       {/* Google Tag Manager */}
-      <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-L32DWYPCW2" />
-      <Script strategy="lazyOnload">
+      <Script id="gtag-cdn" strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-L32DWYPCW2" />
+      <Script id="gtag-js" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -56,7 +56,7 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'G-L32DWYPCW2');
         `}
       </Script>
-      <Script strategy="lazyOnload">
+      <Script id="gtag-js-2" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -68,7 +68,7 @@ export default function App({ Component, pageProps }) {
       {/* End Google Tag Manager */}
 
       {/* Google AdSense */}
-      <Script strategy="lazyOnload" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548079288419529" crossorigin="anonymous" />
+      <Script id="google-adsense" strategy="lazyOnload" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548079288419529" crossorigin="anonymous" />
     </>
   );
 }
