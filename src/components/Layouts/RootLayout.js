@@ -49,15 +49,7 @@ const RootLayout = ({ children }) => {
   }, [token, refetch]);
   /* const { data, isLoading, error, refetch } = useGetGlobalInfoQuery(); */
   const handleCheckBoComplete = () => {
-    if (isLogin) {
-      if (data?.data?.COMPLETE_YN) {
-        router.push("/prefund");
-      } else {
-        setBoModalShow(true);
-      }
-    } else {
-      router.push("/prefund");
-    }
+    router.push(`${process.env.NEXT_PUBLIC_PREFUND_URL}`);
   };
 
   const handleCheckBoCompleteMobile = () => {
@@ -102,36 +94,15 @@ const RootLayout = ({ children }) => {
     e.preventDefault();
     try {
       if (router.pathname === "/login") {
-        await router.push("/signup");
+        await router.push(`${process.env.NEXT_PUBLIC_SIGNUP_URL}`);
       } else {
-        await router.push("/login");
+        await router.push(`${process.env.NEXT_PUBLIC_LOGIN_URL}`);
       }
     } catch (error) {
       console.error("Navigation error:", error);
     }
   };
 
- /*  const userInfoRefetchApi = useSelector((state) => state.userInfo.value);
-  const dispatch = useAppDispatch(); */
-  /* useEffect(() => {
-    const fetchData = async () => {
-      const accessToken = getCookies("accessToken").accessToken; // Assuming you have a function to get the access token.
-
-      if (accessToken) {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_API_URL}/user`,
-          {
-            headers: {
-              authorization: `${getCookies("accessToken").accessToken}`,
-            },
-          }
-        );
-        const information = await response.json();
-        dispatch(userInformation(information?.data));
-      }
-    };
-    fetchData();
-  }, [getCookies("accessToken").accessToken, userInfoRefetchApi]); */
 
   return (
     <>
@@ -212,7 +183,8 @@ const RootLayout = ({ children }) => {
                   </div>
                   <p className="mb-0 text-white">Markets</p>
                 </Link>
-                <button
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_PREFUND_URL}`}
                   style={{ border: "none", backgroundColor: "transparent" }}
                   className="d-flex align-items-center mobile-drawer-image-link mb-4 p-0"
                   onClick={handleCheckBoCompleteMobile}
@@ -221,7 +193,7 @@ const RootLayout = ({ children }) => {
                     <Image src={Prefund} alt="" width={20} height={20} />
                   </div>
                   <p className="mb-0 text-white">BO Prefund & Withdraw</p>
-                </button>
+                </Link>
 
                 <div className="fixed-bottom p-4">
                     <>
