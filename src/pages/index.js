@@ -75,6 +75,16 @@ const LandingPage = () => {
 				<meta name="twitter:label1" content="Est. reading time" />
 				<meta name="twitter:data1" content="3 minutes" />
 			</Head>
+			{/* Google Tag Manager (noscript) */}
+			<noscript>
+				<iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-MJKHBBG"
+				height="0"
+				width="0"
+				style={{ display: 'none', visibility: 'hidden' }}
+				></iframe>
+			</noscript>
+			{/* End Google Tag Manager (noscript) */}
 
 			<section className="container mb-4">
 				<div className="row mt-2">
