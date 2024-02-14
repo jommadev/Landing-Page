@@ -10,6 +10,7 @@ import edge from '../assets/images/Edge-Asset-Management-logo.svg';
 import midway from '../assets/images/Midway-Securities.svg';
 import HeroImage from '../assets/images/hero_image.svg';
 /* import landingImage1 from '../assets/images/landing-page-image-1.svg'; */
+import SocialHomeImage from '../assets/images/jomma-home-logo.png';
 import { useRouter } from 'next/router';
 import landingGif from '../assets/images/Select Stocks, Investment Themes, Mutual Funds & Bonds You want to Invest in.gif';
 import btnInvestIcon from '../assets/images/investing-btn-icon.svg';
@@ -49,11 +50,31 @@ const LandingPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Home - Jomma</title>
+				<title>Jomma - Digital Investment Marketplace in Bangladesh</title>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 				/>
+				<meta name="description" content="Jomma is a digital investment marketplace in Bangladesh for stocks, bonds and mutual funds. Invest now, secure your future." />
+				<link rel="canonical" href="https://jomma.online/" />
+				<meta property="og:locale" content="en_US" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Jomma - Digital Investment Marketplace in Bangladesh" />
+				<meta property="og:description" content="Jomma is a digital investment marketplace in Bangladesh for stocks, bonds and mutual funds. Invest now, secure your future." />
+				<meta property="og:url" content="https://jomma.online/" />
+				<meta property="article:publisher" content="https://facebook.com/jomma.online" />
+				<meta property="article:modified_time" content="2023-11-02T05:56:44+00:00" />
+				<meta property="og:image" content={SocialHomeImage} />
+				<meta property="og:image:width" content="1920" />
+				<meta property="og:image:height" content="1080" />
+				<meta property="og:image:type" content="image/png" />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content="Jomma - Digital Investment Marketplace in Bangladesh" />
+				<meta name="twitter:description" content="Jomma is a digital investment marketplace in Bangladesh for stocks, bonds and mutual funds. Invest now, secure your future." />
+				<meta name="twitter:image" content={SocialHomeImage} />
+				<meta name="twitter:site" content="@jomma_online" />
+				<meta name="twitter:label1" content="Est. reading time" />
+				<meta name="twitter:data1" content="3 minutes" />
 			</Head>
 
 			<section className="container mb-4">
