@@ -12,21 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
 
-  useEffect(() => {
-    // Google Tag Manager
-    const handleRouteChange = (url) => {
-      window.dataLayer.push({
-        event: "pageview",
-        page: url,
-      });
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
 
   const getLayout = Component.getLayout || ((page) => page);
 
@@ -43,8 +29,8 @@ export default function App({ Component, pageProps }) {
 
       {/* Load Bootstrap JavaScript using next/script */}
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
-
-      {/* Facebook Pixel Code */}
+	  
+	  {/* Facebook Pixel Code */}
       <Script strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s)
@@ -59,14 +45,6 @@ export default function App({ Component, pageProps }) {
           fbq('track', 'PageView');
         `}
       </Script>
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=893506848615408&ev=PageView&noscript=1"
-        />
-      </noscript>
 
       {/* Google Tag Manager */}
       <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-L32DWYPCW2" />
