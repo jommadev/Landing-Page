@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react';
 import brac from '../assets/images/BRAC_EPL_Investments_Ltd-Landing.svg';
 import edge from '../assets/images/Edge-Asset-Management-logo.svg';
 import midway from '../assets/images/Midway-Securities.svg';
-import HeroImage from '../assets/images/hero_image.svg';
+/* import HeroImage from '../assets/images/hero_image.svg'; */
+import HeroImage from '../assets/images/hero_image-svg.webp';
 /* import landingImage1 from '../assets/images/landing-page-image-1.svg'; */
 import { useRouter } from 'next/router';
 import landingGif from '../assets/images/Select Stocks, Investment Themes, Mutual Funds & Bonds You want to Invest in.gif';
@@ -104,7 +105,7 @@ const LandingPage = () => {
 						</ButtonPrimary>
 					</div>
 					<div className="col-lg-5">
-						<Image src={HeroImage} alt="heroimage" layout="responsive" />
+						<Image src={HeroImage} alt="heroimage" className='hero-image-size'/>
 					</div>
 				</div>
 			</section>

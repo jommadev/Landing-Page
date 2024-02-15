@@ -1113,6 +1113,11 @@ margin-right: 0;
     padding: 5px 10px;
     font-weight: 400;
   }
+  /*Home banner*/
+    .hero-image-size{
+      max-width: 350px;
+      max-height: 370px;
+  }
 }
 
 /* Freatured Section */
