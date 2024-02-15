@@ -40,7 +40,7 @@ const LandingPage = () => {
 	}, []);
 
 	const handleGetStart = () => {
-		router.push(`${process.env.NEXT_PUBLIC_HOME_URL}`);
+		router.push(`${process.env.NEXT_PUBLIC_SIGNUP_URL}`);
 	};
 	const handleGoMarketPage = () => {
 		router.push(`${process.env.NEXT_PUBLIC_MARKET_URL}`);
@@ -91,7 +91,7 @@ const LandingPage = () => {
 					<div className="col-lg-7" style={{ margin: 'auto 0' }}>
 						<p className="hero-section-title">
 							<span className="hero-section-title-mobile">Invest Now,</span>
-							<br /> It’s Easier Thank You Think
+							<br /> It’s Easier Than You Think
 						</p>
 						<p className="hero-section-short-text">
 							Trade in Stocks, Investment Themes, Mutual Funds & Bonds

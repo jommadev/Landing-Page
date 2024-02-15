@@ -2,9 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['jomma.online'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'jomma.online',
+      },
+    ],
   },
 };
-
 
 module.exports = nextConfig
