@@ -1269,6 +1269,11 @@ margin-right: 0;
   }
 }
 
+.hero-image-size {
+  max-width: 586px;
+  max-height: 540px
+}
+
 
 
 
