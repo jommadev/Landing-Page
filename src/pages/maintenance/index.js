@@ -13,7 +13,7 @@ const Maintenance = () => {
 
       <main>
        <center> <h1>Under Maintenance</h1>
-        <p>Sorry, we`&apos;`re currently undergoing maintenance. Please check back later.</p>
+        <p>Sorry, we&apos;re currently undergoing maintenance. Please check back later.</p>
         </center>
       </main>
 
