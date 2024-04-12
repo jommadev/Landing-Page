@@ -20,13 +20,13 @@ export default function App({ Component, pageProps }) {
     <>
       {/* Add Bootstrap CSS */}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-
-      <main className={inter.className}>
-        <Provider store={store}>
-          {getLayout(<Component {...pageProps} />)}
-        </Provider>
-      </main>
-
+      <html lang="en">
+        <main className={inter.className}>
+          <Provider store={store}>
+            {getLayout(<Component {...pageProps} />)}
+          </Provider>
+        </main>
+      </html>
       {/* Load Bootstrap JavaScript using next/script */}
       <Script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
 	  
