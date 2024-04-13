@@ -145,7 +145,7 @@ const LandingPage = () => {
 					</div>
 					<div className="col-lg-6 col-md-6 col-sm-12 col-12 text-end d-flex justify-content-end align-items-center">
 						<div>
-							<h1 className="choose-us-subTitle">Online BO Account Opening</h1>
+							<h2 className="choose-us-subTitle">Online BO Account Opening</h2>
 							<p className="mb-0 choose-us-info choose-us-info-area">
 								Open a BO account with Jomma’s affiliated broker from the
 								comfort of your home.
@@ -160,7 +160,7 @@ const LandingPage = () => {
 				<div className="row gy-4 mb-4">
 					<div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-start align-items-center choose-order1">
 						<div>
-							<h1 className="choose-us-subTitle">3 Easy Steps to Invest</h1>
+							<h2 className="choose-us-subTitle">3 Easy Steps to Invest</h2>
 							<li className="mb-0 choose-us-info">
 								Select Stocks, Investment Themes, Mutual Funds or Bonds
 							</li>
@@ -189,7 +189,7 @@ const LandingPage = () => {
 					</div>
 					<div className="col-lg-5 col-md-5 col-sm-12 col-12 text-end d-flex justify-content-end align-items-center">
 						<div>
-							<h1 className="choose-us-subTitle">Daily Market Information</h1>
+							<h2 className="choose-us-subTitle">Daily Market Information</h2>
 							<p className="mb-0 choose-us-info mb-3 choose-us-info-area">
 								Daily market information and price alerts delivered to you.
 							</p>

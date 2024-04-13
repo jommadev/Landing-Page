@@ -179,7 +179,7 @@ const RootLayout = ({ children }) => {
                   onClick={closeOffcanvasProgrammatically}
                 >
                   <div className="mobile-drawer-image-area">
-                    <Image src={Markets} alt="" width={20} height={20} />
+                    <Image src={Markets} alt="markets-icon-jomma" width={20} height={20} />
                   </div>
                   <p className="mb-0 text-white">Markets</p>
                 </Link>
@@ -190,7 +190,7 @@ const RootLayout = ({ children }) => {
                   onClick={handleCheckBoCompleteMobile}
                 >
                   <div style={{ marginRight:'20px' }}>
-                    <Image src={Prefund} alt="" width={20} height={20} />
+                    <Image src={Prefund} alt="prefund-icon-jomma" width={20} height={20} />
                   </div>
                   <p className="mb-0 text-white">BO Prefund & Withdraw</p>
                 </Link>
@@ -203,7 +203,7 @@ const RootLayout = ({ children }) => {
                         onClick={closeOffcanvasProgrammatically}
                       >
                         <div className="mobile-drawer-image-area">
-                          <Image src={Signup} alt="" width={20} height={20} />
+                          <Image src={Signup} alt="signup-icon-jomma" width={20} height={20} />
                         </div>
                         <p className="mb-0 text-white">Signup</p>
                       </Link>
@@ -213,7 +213,7 @@ const RootLayout = ({ children }) => {
                         onClick={closeOffcanvasProgrammatically}
                       >
                         <div className="mobile-drawer-image-area">
-                          <Image src={Login} alt="" width={20} height={20} />
+                          <Image src={Login} alt="login-icon-jomma" width={20} height={20} />
                         </div>
                         <p className="mb-0 text-white">Login</p>
                       </Link>
@@ -223,7 +223,7 @@ const RootLayout = ({ children }) => {
             </div>
 
             <Link className="navbar-brand" href={router.basePath}>
-              <Image src={logo} alt="" className="show-logo-pc" />
+              <Image src={logo} alt="logo-icon-jomma" className="show-logo-pc" />
               <div className="show-logo-mobile show-logo-tab">
                {
                   <ButtonSecondary
@@ -318,25 +318,25 @@ const RootLayout = ({ children }) => {
                     href={"https://www.facebook.com/jomma.online"}
                     target="_blank"
                   >
-                    <Image className="me-4" src={Facebook} alt="" />
+                    <Image className="me-4" src={Facebook} alt="facebook-icon-jomma" />
                   </Link>
                   <Link
                     href={"https://www.linkedin.com/company/jomma_online/"}
                     target="_blank"
                   >
-                    <Image className="me-4" src={LinkedIn} alt="" />
+                    <Image className="me-4" src={LinkedIn} alt="linkedin-icon-jomma" />
                   </Link>
                   <Link
                     href={"https://twitter.com/jomma_online"}
                     target="_blank"
                   >
-                    <Image className="me-4" src={Twitter} alt="" />
+                    <Image className="me-4" src={Twitter} alt="twitter-icon-jomma" />
                   </Link>
                   <Link
                     href={"https://www.instagram.com/jomma_online/"}
                     target="_blank"
                   >
-                    <Image className="me-4" src={Instagram} alt="" />
+                    <Image className="me-4" src={Instagram} alt="instagram-icon-jomma" />
                   </Link>
                 </div>
                 <Link
