@@ -18,15 +18,24 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
+      <link rel="apple-touch-icon" sizes="152x152" href="/icons/touch-icon-ipad.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/icons/touch-icon-iphone-retina.png" />
+      <link rel="apple-touch-icon" sizes="167x167" href="/icons/touch-icon-ipad-retina.png" />
+      
+      <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <meta name="format-detection" content="telephone=no" />
       {/* Add Bootstrap CSS */}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-      <html lang="en">
+      
         <main className={inter.className}>
           <Provider store={store}>
             {getLayout(<Component {...pageProps} />)}
           </Provider>
         </main>
-      </html>
+      
       {/* Load Bootstrap JavaScript using next/script */}
       <Script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
 	  

@@ -112,9 +112,9 @@ const LandingPage = () => {
 							<span className="hero-section-title-mobile">Invest Now,</span>
 							<br /> It’s Easier Than You Think
 						</p>
-						<p className="hero-section-short-text">
+						<h1 className="hero-section-short-text">
 							Trade in Stocks, Investment Themes, Mutual Funds & Bonds
-						</p>
+						</h1>
 						<ButtonPrimary
 							onClick={handleGetStart}
 							size={!isMobileView ? 'custom-small' : 'custom-medium'}
@@ -123,7 +123,7 @@ const LandingPage = () => {
 						</ButtonPrimary>
 					</div>
 					<div className="col-lg-5">
-						<Image src={HeroImage} alt="heroimage" className='hero-image-size'/>
+						<Image src={HeroImage} alt="jomma-investment-icon-hero" className='hero-image-size'/>
 					</div>
 				</div>
 			</section>
@@ -145,7 +145,7 @@ const LandingPage = () => {
 					</div>
 					<div className="col-lg-6 col-md-6 col-sm-12 col-12 text-end d-flex justify-content-end align-items-center">
 						<div>
-							<p className="choose-us-subTitle">Online BO Account Opening</p>
+							<h1 className="choose-us-subTitle">Online BO Account Opening</h1>
 							<p className="mb-0 choose-us-info choose-us-info-area">
 								Open a BO account with Jomma’s affiliated broker from the
 								comfort of your home.
@@ -160,7 +160,7 @@ const LandingPage = () => {
 				<div className="row gy-4 mb-4">
 					<div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-start align-items-center choose-order1">
 						<div>
-							<p className="choose-us-subTitle">3 Easy Steps to Invest</p>
+							<h1 className="choose-us-subTitle">3 Easy Steps to Invest</h1>
 							<li className="mb-0 choose-us-info">
 								Select Stocks, Investment Themes, Mutual Funds or Bonds
 							</li>
@@ -171,7 +171,7 @@ const LandingPage = () => {
 								size={!isMobileView ? 'custom-small' : 'custom-medium'}
 							>
 							<div className="d-flex justify-content-center align-items-center">
-								<Image src={btnInvestIcon} alt="icon" className="me-1" />
+								<Image src={btnInvestIcon} alt="jomma-invest-image-icon" className="me-1" />
 								Start Investing
 							</div>
 							</ButtonSecondary>
@@ -179,17 +179,17 @@ const LandingPage = () => {
 					</div>
 
 					<div className="col-lg-6 col-md-6 col-sm-12 col-12 choose-order2">
-						<Image src={landingGif} alt="gif" layout="responsive" />
+						<Image src={landingGif} alt="jomma-why-choose-us-icon" layout="responsive" />
 					</div>
 				</div>
 
 				<div className="row gy-4 mb-4">
 					<div className="col-lg-7 col-md-7 col-sm-12 col-12">
-						<Image src={landingDummy} alt="picture" layout="responsive" />
+						<Image src={landingDummy} alt="jomma-landing-page-icon" layout="responsive" />
 					</div>
 					<div className="col-lg-5 col-md-5 col-sm-12 col-12 text-end d-flex justify-content-end align-items-center">
 						<div>
-							<p className="choose-us-subTitle">Daily Market Information</p>
+							<h1 className="choose-us-subTitle">Daily Market Information</h1>
 							<p className="mb-0 choose-us-info mb-3 choose-us-info-area">
 								Daily market information and price alerts delivered to you.
 							</p>
@@ -198,7 +198,7 @@ const LandingPage = () => {
 								size={!isMobileView ? 'custom-small' : 'custom-medium'}
 							>
 								<div className="d-flex justify-content-center align-items-center">
-									<Image src={btnMarketData} alt="icon" className="me-1" />
+									<Image src={btnMarketData} alt="jomma-market-information-icon" className="me-1" />
 									See Market Data
 								</div>
 							</ButtonSecondary>
@@ -217,33 +217,33 @@ const LandingPage = () => {
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
 								<Image src={midway} alt="Midway Securities: Jomma Partner" className="partnerimage" />
-								<p className="mb-0 text-center partner-name">
+								<h2 className="mb-0 text-center partner-name">
 									Midway Securities
-								</p>
+								</h2>
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
 								<Image src={brac} alt="BRAC EPL Investments Limited: Jomma Partner" className="partnerimage" />
-								<p className="mb-0 text-center partner-name">
+								<h2 className="mb-0 text-center partner-name">
 									Brac EPL Investments
-								</p>
+								</h2>
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
 								<Image src={edge} alt="Edge Asset Management: Jomma Partner" className="partnerimage" />
-								<p className="mb-0 text-center partner-name">
+								<h2 className="mb-0 text-center partner-name">
 									Edge Asset Management
-								</p>
+								</h2>
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 col-6 h-100 mt-4">
 							<div className="partner">
 								<Image src={santa} alt="Shanta Asset Management: Jomma Partner" className="partnerimage" />
-								<p className="mb-0 text-center partner-name">
+								<h2 className="mb-0 text-center partner-name">
 									Shanta Asset Management
-								</p>
+								</h2>
 							</div>
 						</div>
 					</div>
