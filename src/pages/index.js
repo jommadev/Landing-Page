@@ -51,18 +51,18 @@ const LandingPage = () => {
 		<>
 			<Head>
 				<meta charSet="UTF-8" />
-				<title>Jomma: Digital Investment Marketplace in Bangladesh | Open BO Account, Trade Stocks & Mutual Funds</title>
+				<title>Jomma: Investment Marketplace | Open BO Account, Trade Stocks & Mutual Funds in Bangladesh</title>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 				/>
-				<meta name="description" content="Explore Jomma, the premier digital investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!" />
-				<meta name="keywords" content="digital investment marketplace, open BO account, trade stocks, buy mutual funds, market news, financial news, BRAC EPL Investments, trading game, learn stock market, Bangladesh"></meta>
+				<meta name="description" content="Explore Jomma, the premier investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!" />
+				<meta name="keywords" content="investment marketplace, open BO account, trade stocks, buy mutual funds, market news, financial news, BRAC EPL Investments, trading game, learn stock market, Bangladesh"></meta>
 				<link rel="canonical" href="https://jomma.online/" />
 				<meta property="og:locale" content="en_US" />
 				<meta property="og:type" content="website" />
-				<meta property="og:title" content="Jomma: Digital Investment Marketplace in Bangladesh | Open BO Account, Trade Stocks & Mutual Funds" />
-				<meta property="og:description" content="Jomma is a digital investment marketplace in Bangladesh for stocks, bonds and mutual funds. Invest now, secure your future." />
+				<meta property="og:title" content="Jomma: Investment Marketplace | Open BO Account, Trade Stocks & Mutual Funds in Bangladesh" />
+				<meta property="og:description" content="Explore Jomma, the premier investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!" />
 				<meta property="og:url" content="https://jomma.online/" />
 				<meta property="article:publisher" content="https://facebook.com/jomma.online" />
 				<meta property="article:modified_time" content="2023-11-02T05:56:44+00:00" />
@@ -71,8 +71,8 @@ const LandingPage = () => {
 				<meta property="og:image:height" content="1080" />
 				<meta property="og:image:type" content="image/png" />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content="Jomma: Digital Investment Marketplace in Bangladesh | Open BO Account, Trade Stocks & Mutual Funds" />
-				<meta name="twitter:description" content="Jomma is a digital investment marketplace in Bangladesh for stocks, bonds and mutual funds. Invest now, secure your future." />
+				<meta name="twitter:title" content="Jomma: Investment Marketplace | Open BO Account, Trade Stocks & Mutual Funds in Bangladesh" />
+				<meta name="twitter:description" content="Explore Jomma, the premier investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!" />
 				<meta name="twitter:image" content="https://jomma.online/content-images/jomma-home-logo.png" />
 				<meta name="twitter:site" content="@jomma_online" />
 				<meta name="twitter:label1" content="Est. reading time" />
@@ -82,8 +82,8 @@ const LandingPage = () => {
 							{
 							"@context": "https://schema.org",
 							"@type": "WebPage",
-							"name": "Jomma: Digital Investment Marketplace in Bangladesh",
-							"description": "Explore Jomma, the premier digital investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!",
+							"name": "Jomma: Investment Marketplace | Open BO Account, Trade Stocks & Mutual Funds in Bangladesh",
+							"description": "Explore Jomma, the premier investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!",
 							"publisher": {
 								"@type": "Organization",
 								"name": "Jomma",

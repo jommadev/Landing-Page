@@ -147,10 +147,10 @@ const RootLayout = ({ children }) => {
               aria-labelledby="offcanvasDrawerMenuLabel"
             >
               <div className="offcanvas-header">
-                <h5
+                <div
                   className="offcanvas-title"
                   id="offcanvasDrawerMenuLabel"
-                ></h5>
+                ></div>
                 <button
                   type="button"
                   className="btn-close text-reset text-white"
