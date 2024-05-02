@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="format-detection" content="telephone=no" />
       {/* Add Bootstrap CSS */}
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
       
         <main className={inter.className}>
           <Provider store={store}>
@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }) {
         </main>
       
       {/* Load Bootstrap JavaScript using next/script */}
-      <Script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
+      <Script  src="https://fastly.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
 	  
 	  {/* Facebook Pixel Code */}
       <Script id="fb-pixel" strategy="lazyOnload">
