@@ -1,0 +1,69 @@
+.bankYearTitle{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.amountInptArea {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .searchInput {
+    padding: 8px 40px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #1E1E24;
+    border-radius: 100px;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    border: 1px solid #1E1E24;;
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .amountInptArea {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .searchInput {
+      width: 100%;
+      font-size: 20px;
+    }
+  }
+
+  .filterBtnInactive {
+    display: inline-block;
+    border: 1px solid #78787C;
+    border-radius: 24px;
+    padding: 4px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #78787C;
+  }
+
+  .filterBtnActive {
+    display: inline-block;
+    border: 1px solid #2c7c7a;
+    border-radius: 24px;
+    padding: 4px 16px;
+    background-color: #2c7c7a;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+
+
+
+  @media only screen and (max-width: 576px) {
+    .filterBtnInactive,
+    .filterBtnActive {
+      font-size: 14px;
+    }
+    .generationSelection{
+        width: 90%;
+        margin-top: 8px;
+      }
+  }

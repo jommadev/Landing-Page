@@ -1,7 +1,6 @@
-
 /* Product Section */
 .ProductSection {
-	padding:36px 0;
+	padding: 36px 0;
 	/* max-width: 1300px !important; */
 }
 .ProductSectionArea {
@@ -87,9 +86,6 @@
 		padding: 12px;
 	}
 }
-
-
-
 
 /* Invest Calculator */
 .investCalculatorSection {
@@ -427,52 +423,139 @@
 	}
 }
 
-.customeSliderCount{
+.customeSliderCount {
 	font-size: 16px;
 	font-weight: 600;
 	color: #2c7c7a;
 }
 
-.noticeInfo{
+.noticeInfo {
 	font-size: 12px;
 }
-.boCompleted{
+.boCompleted {
 	font-size: 18px;
 	font-weight: 600;
 }
 
 /* Container for the entire slider */
-.sliderContainer{
+.sliderContainer {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-  }
+}
 
-  /* Wrapper for individual slides, positioned horizontally */
-.sliderWrapper{
+/* Wrapper for individual slides, positioned horizontally */
+.sliderWrapper {
 	display: flex;
 	transition: transform 0.5s ease-in-out;
-  }
+}
 /* Style for each individual slide */
 .customSlideClass {
 	min-width: 100%;
 	box-sizing: border-box;
-  }
+}
 
+.ChooseHeading {
+	text-align: center;
+	font-size: 20px;
+}
+.ChooseDetails {
+	width: 75%;
+	margin: 0 auto;
+}
 
-  @media only screen and (max-width: 576px) {
-	.customeSliderCount{
+@media only screen and (max-width: 576px) {
+	.customeSliderCount {
 		font-size: 14px;
 	}
 
-	.noticeInfo{
+	.noticeInfo {
 		font-size: 10px;
 	}
-	
-	.boCompleted{
+
+	.boCompleted {
 		font-size: 14px;
 	}
-	
-  }
+	.ChooseHeading {
+		font-size: 16px;
+	}
+	.ChooseDetails {
+		font-size: 14px;
+	}
+}
 
+.searchBarContainer {
+	position: relative;
+	width: 60%;
+}
+.searchIcon {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+}
 
+.searchInput {
+	padding: 10px 40px;
+	width: 100%;
+	font-size: 14px;
+	border: 1px solid #000;
+	border-radius: 133px;
+	background-color: transparent;
+}
+
+.searchInput:focus {
+	outline: none;
+	border: 1px solid #000;
+}
+.resultsList {
+	width: 100%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 8px #ddd;
+	border-radius: 10px;
+	max-height: 300px;
+	overflow-y: auto;
+	position: absolute;
+	z-index: 10;
+}
+
+.searchResult {
+	padding: 10px 20px;
+}
+
+.searchResult:hover {
+	background-color: #efefef;
+}
+
+@media only screen and (max-width: 576px) {
+	.BackPageIcon {
+		font-size: 16px;
+		font-weight: 500;
+	}
+	.searchBarContainer {
+		position: relative;
+		margin: auto;
+		width: 100%;
+	}
+
+	.searchContainer {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+	}
+
+	.searchInput {
+		padding: 10px 40px;
+		font-size: 14px;
+	}
+	.resultsList {
+		width: 90%;
+	}
+	.searchResult {
+		font-size: 12px;
+	}
+}

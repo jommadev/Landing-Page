@@ -4,8 +4,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'jomma.online',
+        protocol: "https",
+        hostname: "jomma.online",
+        pathname: '**',
+      },
+      {
+        protocol: "https",
+        hostname: "staging.jomma.online",
+        pathname: '**',
       },
     ],
   },

@@ -119,17 +119,7 @@ const RootLayout = ({ children }) => {
         <nav className="navbar navbar-expand-lg navbar-light sticky-top bg-white">
           <div className="container navbar-padding">
             <div className="d-flex justify-content-center align-items-center">
-              <button
-                className="navbar-toggler p-0"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDrawerMenu"
-                aria-controls="offcanvasDrawerMenu"
-              >
-                <div className="d-flex align-items-center">
-                  <Image src={hambuger} alt="Jomma Hamburger" className="hamburger-size" />
-                </div>
-              </button>
+              
               <Link href="#">
                 <Image
                   src={Mobilelogo}
@@ -146,80 +136,8 @@ const RootLayout = ({ children }) => {
               id="offcanvasDrawerMenu"
               aria-labelledby="offcanvasDrawerMenuLabel"
             >
-              <div className="offcanvas-header">
-                <div
-                  className="offcanvas-title"
-                  id="offcanvasDrawerMenuLabel"
-                ></div>
-                <button
-                  type="button"
-                  className="btn-close text-reset text-white"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                  id="closeOffcanvasButton"
-                ></button>
-              </div>
-              <div className="offcanvas-body ps-4">
-                
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_HOME_URL}`}
-                    className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                    onClick={closeOffcanvasProgrammatically}
-                  >
-                    <div className="mobile-drawer-image-area">
-                      <Image src={Invest} alt="Jomma Investment" width={20} height={20} />
-                    </div>
-                    <p className="mb-0 text-white">Invest</p>
-                  </Link>
               
-
-                <Link
-                  href={`${process.env.NEXT_PUBLIC_MARKET_URL}`}
-                  className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                  onClick={closeOffcanvasProgrammatically}
-                >
-                  <div className="mobile-drawer-image-area">
-                    <Image src={Markets} alt="markets-icon-jomma" width={20} height={20} />
-                  </div>
-                  <p className="mb-0 text-white">Markets</p>
-                </Link>
-                <Link
-                  href={`${process.env.NEXT_PUBLIC_PREFUND_URL}`}
-                  style={{ border: "none", backgroundColor: "transparent" }}
-                  className="d-flex align-items-center mobile-drawer-image-link mb-4 p-0"
-                  onClick={handleCheckBoCompleteMobile}
-                >
-                  <div style={{ marginRight:'20px' }}>
-                    <Image src={Prefund} alt="prefund-icon-jomma" width={20} height={20} />
-                  </div>
-                  <p className="mb-0 text-white">BO Prefund & Withdraw</p>
-                </Link>
-
-                <div className="fixed-bottom p-4">
-                    <>
-                      <Link
-                        href={`${process.env.NEXT_PUBLIC_SIGNUP_URL}`}
-                        className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                        onClick={closeOffcanvasProgrammatically}
-                      >
-                        <div className="mobile-drawer-image-area">
-                          <Image src={Signup} alt="signup-icon-jomma" width={20} height={20} />
-                        </div>
-                        <p className="mb-0 text-white">Signup</p>
-                      </Link>
-                      <Link
-                        href={`${process.env.NEXT_PUBLIC_LOGIN_URL}`}
-                        className="d-flex align-items-center mobile-drawer-image-link mb-4"
-                        onClick={closeOffcanvasProgrammatically}
-                      >
-                        <div className="mobile-drawer-image-area">
-                          <Image src={Login} alt="login-icon-jomma" width={20} height={20} />
-                        </div>
-                        <p className="mb-0 text-white">Login</p>
-                      </Link>
-                    </>
-                </div>
-              </div>
+              
             </div>
 
             <Link className="navbar-brand" href={router.basePath}>
@@ -240,45 +158,7 @@ const RootLayout = ({ children }) => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li
-                  className={`nav-item`}
-                >
-                  <Link
-                    className={`text-dark nav-link px-4 font-w-400`}
-                    aria-current="page"
-                    href={`${process.env.NEXT_PUBLIC_HOME_URL}`}
-                  >
-                   Invest
-                  </Link>
-                  <div className="underline"></div>
-                </li>
-
-                <li
-                  className={`nav-item`}
-                >
-                  <Link
-                    className={`text-dark nav-link  px-4 font-w-400`}
-                    aria-current="page"
-                    href={`${process.env.NEXT_PUBLIC_MARKET_URL}`}
-                  >
-                    Markets
-                  </Link>
-                  <div className="underline"></div>
-                </li>
-
-                <li
-                  className={`nav-item`}
-                >
-                  <Link
-                    className={`text-dark nav-link px-4 font-w-400`}
-                    aria-current="page"
-                    style={{ border: "none", backgroundColor: "transparent" }}
-                    href={`${process.env.NEXT_PUBLIC_PREFUND_URL}`}
-                  >
-                    BO Prefund & Withdraw
-                  </Link>
-                  <div className="underline"></div>
-                </li>
+                
               </ul>
               <div className="d-flex align-items-center">
                
