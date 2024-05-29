@@ -32,9 +32,9 @@ const QuestionCard = ({topics, topicId, title}) => {
 								</div>
 							) : null}
 							<div className="help-center-info-area">
-								<p className="question-title-en mb-1">{truncateText(item?.INFO_TITLE_EN, 42)}</p>
+								<p className="question-title-en mb-2">{truncateText(item?.INFO_TITLE_EN, 42)}</p>
 								<p
-									className="question-title-bn mb-1"
+									className="question-title-bn mb-2"
 									style={{ fontFamily: 'Noto Sans Bengali' }}
 								>
 								{truncateText(item?.INFO_TITLE_BN, 50)}

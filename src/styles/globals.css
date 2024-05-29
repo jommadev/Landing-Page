@@ -1728,7 +1728,7 @@ table.custom-stripe tr {
 	line-height: 24px;
 }
 .question-title-bn {
-	color: #78787c;
+	color: #1e1e24;
 	font-size: 14px;
 	font-weight: 400;
 }
@@ -1939,4 +1939,9 @@ table.custom-stripe tr {
 
 	
 
+}
+
+.information-details p{
+	color: #1E1E24;
+	margin-bottom: 6px;
 }

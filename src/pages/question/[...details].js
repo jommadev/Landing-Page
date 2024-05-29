@@ -62,7 +62,7 @@ const Details = ({slug}) => {
 					></div>
 
 					<div className="details-area">
-						<div>
+					<div className='information-details mb-4'>
 						{
 							details?.data?.INFO_DESC_EN && parse(details?.data?.INFO_DESC_EN)
 						}
@@ -70,7 +70,7 @@ const Details = ({slug}) => {
 						
 						</div>
 
-						<div style={{ fontFamily: 'Noto Sans Bengali' }}>
+						<div className='information-details mb-4' style={{ fontFamily: 'Noto Sans Bengali' }}>
 						{
 							details?.data?.INFO_DESC_BN && parse(details?.data?.INFO_DESC_BN)
 						}
@@ -79,7 +79,7 @@ const Details = ({slug}) => {
 
 {
 	data?.data?.length > 0 ? 
-					<div className="mt-3 mt-md-5">
+					<div className="mt-3 mt-md-4">
 						<QuestionCard topics={data?.data} topicId={2} title={`More Questions ${data?.data[0]?.PARENT_INFO_TITLE}`} />
 					</div>
 					:
