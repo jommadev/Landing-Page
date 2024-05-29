@@ -67,7 +67,7 @@ const InvestCalculator = () => {
 	};
 
 	return (
-		<div className={` pt-3 pt-lg-5`}>
+		<div className={`section-margin`}>
 			<div className="container">
 					{/* <p
 						className={`${styles.investCalculatorTitleLanding} mb-0 text-center`}

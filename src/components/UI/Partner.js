@@ -3,8 +3,11 @@ import Bkash from '../../assets/images/Partner-BKash-bKash.png';
 import Brac from '../../assets/images/Partner-BRAC_EPL_Investments_Ltd.svg';
 import Edge from '../../assets/images/Partner-Edge-Asset-Management.png';
 import MidwaySecurities from '../../assets/images/Partner-Midway-Securities.svg';
-import Shanta from '../../assets/images/Partner-Shanta.png';
+import Columbia from '../../assets/images/columbia_logo.svg';
 import PartnerInfo from '../Shared/PartnerInfo';
+
+import styles from '../../styles/markets/news.module.css';
+import Image from 'next/image';
 
 const data = [
 	{
@@ -27,17 +30,31 @@ const data = [
 		name: 'Edge Asset Management',
 		img: Edge,
 	},
+	{
+		id: 5,
+		name: 'Columbia Shares & Securities Ltd',
+		img: Columbia,
+	},
 	
 ];
 
 const Partner = () => {
 	return (
 		<div className="mt-4 marquee-section">
-			<Marquee >
+			{/* <Marquee >
 				{data.map((item) => (
 					<PartnerInfo key={item?.id} name={item?.name} img={item?.img} />
 				))}
-			</Marquee>
+			</Marquee> */}
+			<div className={styles.containerSection}>
+            {data.map(item => (
+                <div key={item.id} className={styles.divItem}>
+                    <Image src={item.img} alt={item.name} className={styles.image} />
+                    <p className={styles.description}>{item.name}</p>
+                </div>
+            ))}
+        </div>
+			
 		</div>
 	);
 };

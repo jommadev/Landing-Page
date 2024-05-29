@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
-const TradingTuesday = () => {
+const MobileTradingTuesday = () => {
 	const sliderRef = useRef(null);
 	const [sliderLoaded, setSliderLoaded] = useState(false);
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,39 +56,12 @@ const TradingTuesday = () => {
 		dots: false,
 		infinite: false,
 		speed: 500,
-		slidesToShow: 5,
+		slidesToShow: 2.3,
 		slidesToScroll: 1,
 		initialSlide: 0,
-		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 5,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true,
-				},
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 3.5,
-					slidesToScroll: 1,
-					initialSlide: 2,
-				},
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 2.3,
-					slidesToScroll: 1,
-				},
-			},
-		],
-		afterChange: (current) => {
-			setCurrentSlide(current);
-		}
 	};
+
+
 
 	const handleChange = (value) => {
 		setInput(value);
@@ -130,8 +103,8 @@ const TradingTuesday = () => {
 
 	return (
 		<>
-			<div className="px-0 py-3">
-				<div className="row align-items-center">
+			<div className="px-2 px-md-3" >
+				<div className="row align-items-center px-0 mx-0">
 					<div className="col-lg-8 col-7">
 						<div className="d-flex justify-content-end">
 							<div className={`${styles.searchBarContainer}`}>
@@ -202,7 +175,7 @@ const TradingTuesday = () => {
 				</div>
 			</div>
 
-			<div className="container px-0 py-3 pb-lg-5">
+			<div className="container px-0 ">
 				<div className="slider-container position-relative">
 				{isMobileView ? (
 						<Image
@@ -219,6 +192,7 @@ const TradingTuesday = () => {
 							}}
 						/>
 					) : null}
+
 					<Slider {...settings} ref={sliderRef}>
 					{
 						data?.data?.data?.map((item, index) => (
@@ -227,9 +201,8 @@ const TradingTuesday = () => {
 							<Image
 								src={item?.DOC_IMAGE}
 								alt="Jomma Trading Tuesday"
-								width={20}
-								height={20}
-								layout="responsive"
+								width={250}
+								height={250}
 								className="pe-2 pe-lg-4 pb-0" style={{cursor:'pointer'}}
 							/>
 							</Link>
@@ -240,6 +213,10 @@ const TradingTuesday = () => {
 						
 						
 					</Slider>
+
+
+					
+					
 					{isMobileView ? (
 						<Image
 							src={next}
@@ -269,4 +246,4 @@ const TradingTuesday = () => {
 	);
 };
 
-export default TradingTuesday;
+export default MobileTradingTuesday;

@@ -15,13 +15,13 @@ const Contact = ({isMobileView}) => {
 		
 			if(!mobileNumber)
 				return 0;
-			/* mixpanel.track('Contact Page', {
+			mixpanel.track('Contact Page', {
 			'Given Mobile Number': mobileNumber,
-			}) */
+			})
 			Swal.fire({
 				position: 'center',
 				icon: 'success',
-				text: `--------------------------`,
+				text: `Jomma will be contacted soon.`,
 				showConfirmButton: false,
 				timer: 2000,
 				allowOutsideClick: false,

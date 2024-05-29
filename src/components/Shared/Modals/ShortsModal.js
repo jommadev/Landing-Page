@@ -3,15 +3,16 @@ import Image from 'next/image';
 import Modal from 'react-bootstrap/Modal';
 import close from '../../../assets/images/btn_close.svg';
 
-function ShortsModal({ shortsModalShow, shortsLink, handleModalClose }) {
+function ShortsModal({ shortsModalShow, shortsLink, handleModalClose, videoType }) {
 	/* const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false); */
+	
 
 	return (
 		<>
 			<Modal
 				show={shortsModalShow}
-				dialogClassName={`${styles.ShortsCustomModal}`}
+				dialogClassName={`${videoType===1 ? styles.ShortsCustomModal : styles.VideoCustomModal}`}
 				centered
 				aria-labelledby="example-custom-modal-styling-title"
 			>
@@ -29,6 +30,7 @@ function ShortsModal({ shortsModalShow, shortsLink, handleModalClose }) {
 							alt="Close"
 							style={{ width: '20px', height: '20px', cursor: 'pointer' }}
 						/>
+						
 					</div>
 				</Modal.Header>
 				<Modal.Body>
@@ -37,8 +39,9 @@ function ShortsModal({ shortsModalShow, shortsLink, handleModalClose }) {
 						title="YouTube video player"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
 						allowFullScreen
-						className={`${styles.ShortsCustomModalIframe}`}
+						className={`${videoType===1 ? styles.ShortsCustomModalIframe : styles.VideoCustomModalIframe}`}
 					></iframe>
+					
 				</Modal.Body>
 			</Modal>
 		</>

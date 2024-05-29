@@ -40,8 +40,8 @@ const NewsVideo = () => {
 		dots: false,
 		infinite: false,
 		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 3,
+		slidesToShow: 2.7,
+		slidesToScroll: 1,
 		initialSlide: 0,
 		responsive: [
 			{
@@ -73,10 +73,12 @@ const NewsVideo = () => {
 
 	const [shortsModalShow, setShortsModalShow] = useState(false);
 	const [shortsLink, setShortsLink] = useState('');
+	const [videoType, setVideoType] = useState();
 	const handleModalClose = () => setShortsModalShow(false);
 
-	const handleVideoClick = (data) => {
+	const handleVideoClick = (data, video_type) => {
 		setShortsLink(data);
+		setVideoType(video_type);
 		setShortsModalShow(true);
 	};
 
@@ -86,6 +88,7 @@ const NewsVideo = () => {
 				<ShortsModal
 					shortsModalShow={shortsModalShow}
 					shortsLink={shortsLink}
+					videoType={videoType}
 					handleModalClose={handleModalClose}
 				/>
 			)}
@@ -104,7 +107,7 @@ const NewsVideo = () => {
 							></iframe>
 							<div
 								className={styles.NewsVideosOverlay}
-								onClick={() => handleVideoClick(item?.VIDEO_LINK)}
+								onClick={() => handleVideoClick(item?.VIDEO_LINK, item?.VIDEO_TYPE)}
 							></div>
 						</div>
 					</div>
@@ -117,64 +120,41 @@ const NewsVideo = () => {
 					<div className="slider-container position-relative">
 						{' '}
 						{/* Added "position-relative" class */}
-						<Image
+						{/* <Image
 							src={previous}
 							alt="previous"
 							className="position-absolute start-0 top-50 translate-middle-y"
 							onClick={() => sliderRef.current.slickPrev()}
 							style={{ cursor: 'pointer', zIndex: 1 }}
-						/>
+						/> */}
 						<Slider {...settings} ref={sliderRef}>
-								<div>
-									<p className={styles.NewsVideosTitle}>Top 3 News</p>
+						{
+					data?.data?.map(item => (
+						<div key={item?.VIDEO_LINK}>
+									<p className={styles.NewsVideosTitle}>{item?.VIDEO_NAME}</p>
 									<div className={styles.customDiv}>
 										<iframe
 											loading="lazy"
 											className={styles.iframeStyles}
-											src={`https://www.youtube.com/embed/4GFkMlazvtk`}
+											src={`https://www.youtube.com/embed/${item?.VIDEO_LINK}`}
 										></iframe>
 										<div
 											className={styles.NewsVideosOverlay}
-											onClick={() => handleVideoClick('4GFkMlazvtk')}
+											onClick={() => handleVideoClick(item?.VIDEO_LINK, item?.VIDEO_TYPE)}
 										></div>
 									</div>
 								</div>
-								<div>
-									<p className={styles.NewsVideosTitle}>Top 3 News</p>
-									<div className={styles.customDiv}>
-										<iframe
-											loading="lazy"
-											className={styles.iframeStyles}
-											src={`https://www.youtube.com/embed/4GFkMlazvtk`}
-										></iframe>
-										<div
-											className={styles.NewsVideosOverlay}
-											onClick={() => handleVideoClick('4GFkMlazvtk')}
-										></div>
-									</div>
-								</div>
-								<div>
-									<p className={styles.NewsVideosTitle}>Top 3 News</p>
-									<div className={styles.customDiv}>
-										<iframe
-											loading="lazy"
-											className={styles.iframeStyles}
-											src={`https://www.youtube.com/embed/4GFkMlazvtk`}
-										></iframe>
-										<div
-											className={styles.NewsVideosOverlay}
-											onClick={() => handleVideoClick('4GFkMlazvtk')}
-										></div>
-									</div>
-								</div>
+					))
+				}
+								
 						</Slider>
-						<Image
+						{/* <Image
 							src={next}
 							alt="next"
 							className="position-absolute end-0 top-50 translate-middle-y"
 							onClick={() => sliderRef.current.slickNext()}
 							style={{ cursor: 'pointer', zIndex: 1 }}
-						/>
+						/> */}
 					</div>
 				</div>
 			)}

@@ -120,7 +120,7 @@ const RootLayout = ({ children }) => {
           <div className="container navbar-padding">
             <div className="d-flex justify-content-center align-items-center">
               
-              <Link href="#">
+              <Link href="/">
                 <Image
                   src={Mobilelogo}
                   alt="Jomma Logo"
@@ -140,7 +140,7 @@ const RootLayout = ({ children }) => {
               
             </div>
 
-            <Link className="navbar-brand" href={router.basePath}>
+            <Link className="navbar-brand" href={'/'}>
               <Image src={logo} alt="logo-icon-jomma" className="show-logo-pc" />
               <div className="show-logo-mobile show-logo-tab">
                {

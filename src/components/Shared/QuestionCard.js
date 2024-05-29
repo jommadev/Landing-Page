@@ -1,3 +1,4 @@
+import { truncateText } from '@/utils/subStringLength';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -11,6 +12,7 @@ const QuestionCard = ({topics, topicId, title}) => {
 	else
 	router.push(`/question/${slug}`);
 	}
+
     return (
 			<div>
 				<h1 className="text-center video-section-header mb-0 mt-5">{title}</h1>
@@ -24,16 +26,18 @@ const QuestionCard = ({topics, topicId, title}) => {
 						<div className="help-center-topic-section">
 							{item?.INFO_IMAGE ? (
 								<div className="help-center-image-area">
-									<Image src={item?.INFO_IMAGE} alt="" width={80} height={35} className="ms-2"></Image>
+									<Image src={item?.INFO_IMAGE} alt="" width={item?.INFO_TITLE_EN === 'About Jomma' || 
+	item?.INFO_TITLE_EN === 'Brac EPL Wealth Management product' || 
+	item?.INFO_TITLE_EN === 'IPO (Initial Public Offering)' ? 80 : 40} height={35} ></Image>
 								</div>
 							) : null}
 							<div className="help-center-info-area">
-								<p className="question-title-en mb-1">{item?.INFO_TITLE_EN}</p>
+								<p className="question-title-en mb-1">{truncateText(item?.INFO_TITLE_EN, 42)}</p>
 								<p
 									className="question-title-bn mb-1"
 									style={{ fontFamily: 'Noto Sans Bengali' }}
 								>
-									{item?.INFO_TITLE_BN}
+								{truncateText(item?.INFO_TITLE_BN, 50)}
 								</p>
 							</div>
 						</div>

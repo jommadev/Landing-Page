@@ -7,7 +7,7 @@ import styles from '../../styles/home/home.module.css'; // Import your CSS file 
 
 const Choose = () => {
     return (
-        <div className={`${styles.ProductSectionArea} container py-3 py-lg-5`}>
+        <div className={`${styles.ProductSectionArea} container `}>
             <div className="row text-center">
                 <div className="col-md-4 mb-4">
                     <div className="feature-item">

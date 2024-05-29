@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-   "start": "PORT=3001 NODE_ENV=production next start",
+    "start": "PORT=3001 NODE_ENV=production next start",
     "build": "next build"
   },
   "dependencies": {
+    "@ctrl/react-adsense": "^1.7.0",
     "@reduxjs/toolkit": "^1.9.5",
     "apexcharts": "^3.43.0",
     "cookies-next": "^4.0.0",

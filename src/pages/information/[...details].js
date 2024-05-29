@@ -38,7 +38,7 @@ const Details = ({slug}) => {
 					details?.data?.INFO_IMAGE &&
 					<>
 
-					<Image src={details?.data?.INFO_IMAGE} alt="logo-icon-jomma" width={250} height={60} className="show-logo-pc" />
+					{/* <Image src={details?.data?.INFO_IMAGE} alt="logo-icon-jomma" width={50} height={60} className="show-logo-pc" /> */}
 					<Image
 						src={details?.data?.INFO_IMAGE}
 						alt="Jomma Logo"

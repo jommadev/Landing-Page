@@ -3,28 +3,26 @@ import InvestCalculator from '@/components/UI/InvestCalculator';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-/* import HeroImage from '../assets/images/hero_image.svg'; */
-/* import landingImage1 from '../assets/images/landing-page-image-1.svg'; */
-import BankInterestRate from '@/components/UI/BankInterestRate';
+import GoogleAd from '@/components/Shared/GoogleAds/GoogleAd';
 import Choose from '@/components/UI/Choose';
+import Contact from '@/components/UI/Contact';
 import News from '@/components/UI/News';
 import NewsVideo from '@/components/UI/NewsVideo';
 import Partner from '@/components/UI/Partner';
-import Subscription from '@/components/UI/Subscription';
-import TradingTuesday from '@/components/UI/TradingTuesday';
+import PcView from '@/components/UI/TopInformation/PcView';
+import { useGetTopListQuery } from '@/redux/api/apiSlice';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import rightArrow from '../assets/images/right-arrow.svg';
-import ButtonSecondary from '@/components/UI/ButtonSecondary';
-import ButtonPrimary from '@/components/UI/ButtonPrimary';
-import HelpCenter from '@/components/UI/HelpCenter';
-import Contact from '@/components/UI/Contact';
-import TopInformation from '@/components/UI/TopInformation';
+import MobileView from '../components/UI/TopInformation/MobileView';
+import PcHelpCenter from '@/components/UI/HelpCenter/PcViewHelpCenter';
+import MobileViewHelpCenter from '@/components/UI/HelpCenter/MobileViewHelpCenter';
+import PcTradingTuesday from '@/components/UI/TradingTuesday/PcTradingTuesday';
+import MobileTradingTuesday from '@/components/UI/TradingTuesday/MobileTradingTuesday';
 
 const LandingPage = () => {
 	const router = useRouter();
 	const [isMobileView, setIsMobileView] = useState(false);
-	
 
 	useEffect(() => {
 		function handleResize() {
@@ -49,8 +47,7 @@ const LandingPage = () => {
 	const handleGoMarketPage = () => {
 		router.push(`${process.env.NEXT_PUBLIC_MARKET_URL}`);
 	};
-
-
+	const { data, isLoading, isSuccess } = useGetTopListQuery();
 
 	return (
 		<>
@@ -143,30 +140,52 @@ const LandingPage = () => {
 			</noscript>
 			{/* End Google Tag Manager (noscript) */}
 
-				<TopInformation />
-			<div className={`container mb-5`}>
+			<div
+				class="container py-3"
+				style={{ backgroundColor: '#E0F6F5', borderRadius: '4px' }}
+			>
+				<div class="background-section ">
+					<div class="overlay-content">
+						{isMobileView ? <PcView data={data} /> : <MobileView data={data} />}
+					</div>
+				</div>
+			</div>
+
+ 
+			<div className={`container section-margin`}>
+				<h2 className="text-center video-section-header">
+					News Highlights Today
+				</h2>
 				<News />
 			</div>
-			<div className={isMobileView ? 'container' : ''}>
+
+
+			{/* Google Ads */}
+			<GoogleAd slotID={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT_ID_SQUARE} />
+
+
+
+			<div className={isMobileView ? 'container section-margin' : 'section-margin'}>
 				<div
 					className="container news-videos-background"
 					style={{ borderRadius: '4px' }}
 				>
 					<h1 className="text-center video-section-header">
-						Videos Picked For You
+						Finance Videos Picked For You
 					</h1>
 					<NewsVideo />
 				</div>
 			</div>
 
 			{/* TODO: google ads */}
-			<div className="container mt-5">
-				<h1 className="text-center video-section-header">
-					Why Choose Jomma for Your Next Investment
-				</h1>
-				<div className="d-flex justify-content-center mb-4">
+			<div className="container section-margin-v2">
+				<h2 className="text-center video-section-header">
+					Choose Jomma for Your Next Investment
+				</h2>
+				<Choose />
+				<div className="d-flex justify-content-center">
 					<Link
-						href={process.env.NEXT_PUBLIC_SIGNUP_UR}
+						href={process.env.NEXT_PUBLIC_SIGNUP_URL}
 						className="link-signup mt-2"
 					>
 						Signup Today{' '}
@@ -176,57 +195,52 @@ const LandingPage = () => {
 					</Link>
 				</div>
 
-				<Choose />
+				
 			</div>
 
+			<div className={isMobileView ? 'container section-margin' : 'section-margin'}>
 			<div className=" news-videos-background">
-				<div className="container">
-					<h1 className="text-center video-section-header">Trading Tuesdays</h1>
-					<TradingTuesday mobileNumber={isMobileView}/>
+					<h2 className="text-center video-section-header">Trading Tuesdays</h2>
+					{isMobileView ? <PcTradingTuesday isMobileView={isMobileView} /> : <MobileTradingTuesday isMobileView={isMobileView} />}
 				</div>
 			</div>
 
 			<InvestCalculator />
 
-			{/* TODO: google ads */}
+			{/* Google Ads */}
+			<GoogleAd slotID={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT_ID_SQUARE} />
 
-			<Subscription />
+			{/* <Subscription />
 
-			{/* <div className="container mt-5">
+			<div className="container mt-5">
 				<h1 className="text-center video-section-header">
 					Compare Interest Rate
 				</h1>
 
 				<BankInterestRate />
 			</div> */}
-			<div className="container mt-5">
-				<h1 className="text-center video-section-header">Jomma Partners</h1>
+			<div className="container section-margin">
+				<h2 className="text-center video-section-header">Jomma Partners</h2>
 
 				<Partner />
 			</div>
 
-			<Contact isMobileView={isMobileView}/>
-			{/* TODO: google ads */}
-			<div
-				className=' mt-5'
-			>
-				
-					<h1 className="text-center video-section-header">
-					Help Center
-					</h1>
-					<div className="d-flex justify-content-center mb-4">
-					<Link
-						href={'/information'}
-						className="link-help-center mt-lg-2"
-					>
+			<Contact isMobileView={isMobileView} />
+
+			{/* Google Ads */}
+			<GoogleAd slotID={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT_ID_SQUARE} />
+
+
+
+			<div className="section-margin">
+				<h1 className="text-center video-section-header">Help Center</h1>
+				<div className="d-flex justify-content-center mb-4">
+					<Link href={'/information'} className="link-help-center">
 						Go To Help Center
 					</Link>
 				</div>
 
-
-				<HelpCenter isMobileView={isMobileView}/>
-
-					
+				{isMobileView ? <PcHelpCenter isMobileView={isMobileView} /> : <MobileViewHelpCenter isMobileView={isMobileView} />}
 			</div>
 		</>
 	);

@@ -91,7 +91,7 @@ export default function App({ Component, pageProps }) {
       {/* End Google Tag Manager */}
 
       {/* Google AdSense */}
-      <Script id="google-adsense" strategy="lazyOnload" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548079288419529" crossorigin="anonymous" />
+      {/* <Script id="google-adsense" strategy="lazyOnload" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548079288419529" crossorigin="anonymous" /> */}
     </>
   );
 }
