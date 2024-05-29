@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ButtonPrimary from './ButtonPrimary';
 import Swal from 'sweetalert2';
+import mixpanel from 'mixpanel-browser';
 
 const Contact = ({isMobileView}) => {
     const [mobileNumber, setMobileNumber] = useState('');
@@ -15,13 +16,13 @@ const Contact = ({isMobileView}) => {
 		
 			if(!mobileNumber)
 				return 0;
-			mixpanel.track('Contact Page', {
+			mixpanelpanel.track('Contact Page', {
 			'Given Mobile Number': mobileNumber,
 			})
 			Swal.fire({
 				position: 'center',
 				icon: 'success',
-				text: `Jomma will be contacted soon.`,
+				text: `A personnel from Jomma will get in touch with you soon.`,
 				showConfirmButton: false,
 				timer: 2000,
 				allowOutsideClick: false,
