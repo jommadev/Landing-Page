@@ -16,7 +16,7 @@ const Contact = ({isMobileView}) => {
 		
 			if(!mobileNumber)
 				return 0;
-			mixpanelpanel.track('Contact Page', {
+			mixpanel.track('Contact Page', {
 			'Given Mobile Number': mobileNumber,
 			})
 			Swal.fire({
