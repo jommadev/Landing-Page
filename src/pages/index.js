@@ -233,7 +233,7 @@ const LandingPage = () => {
 
 
 			<div className="section-margin">
-				<h1 className="text-center video-section-header">Help Center</h1>
+				<h2 className="text-center video-section-header">Help Center</h2>
 				<div className="d-flex justify-content-center mb-4">
 					<Link href={'/information'} className="link-help-center">
 						Go To Help Center
