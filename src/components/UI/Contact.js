@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ButtonPrimary from './ButtonPrimary';
 import mixpanel from 'mixpanel-browser';
+import Swal from 'sweetalert2';
 
 const Contact = ({ isMobileView }) => {
 	const [mobileNumber, setMobileNumber] = useState('');
