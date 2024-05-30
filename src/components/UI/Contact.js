@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ButtonPrimary from './ButtonPrimary';
+import mixpanel from 'mixpanel-browser';
 
 const Contact = ({ isMobileView }) => {
 	const [mobileNumber, setMobileNumber] = useState('');

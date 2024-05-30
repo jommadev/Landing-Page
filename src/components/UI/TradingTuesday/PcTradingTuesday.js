@@ -42,6 +42,7 @@ const PcTradingTuesday = () => {
 	}, []);
 
 	const { data, isLoading, isSuccess,refetch } = useGetTradingTuesdayListQuery(searchInfo);
+	console.log(data)
 	useEffect(() => {
 		refetch();
 		setSearchItem(data?.data?.searchTitle);
@@ -57,7 +58,7 @@ const PcTradingTuesday = () => {
 		setSearchInfo(() => ({
 			searchTerm: '',
 			sortBy: 'doc_date',
-		sortOrder: 'desc',
+			sortOrder: 'desc',
 		}));
 		setInput(''); 
 	};
@@ -111,9 +112,14 @@ const PcTradingTuesday = () => {
 	const [selectedValue, setSelectedValue] = useState('Newest');
 
 	const handleSelectedValue = (event) => {
-		setSelectedValue(event.target.value);
+		const value = event.target.value;
+		setSelectedValue(value);
+		setSearchInfo((prevInfo) => ({
+			...prevInfo,
+			sortBy: 'doc_date',
+			sortOrder: value === 'Newest' ? 'desc' : 'asc',
+		}));
 	};
-
 	return (
 		<>
 			<div className="px-2 px-md-3" >
@@ -184,11 +190,6 @@ const PcTradingTuesday = () => {
 										value="Oldest"
 									>
 										Oldest
-									</option>
-									<option
-										value="MostPopular"
-									>
-										Most Popular
 									</option>
 								</select>
 							</div>

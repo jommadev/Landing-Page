@@ -54,19 +54,25 @@ const MobileTradingTuesday = () => {
 	}, [sliderRef]);
 
 	const handleClear = () => {
-		setSearchInfo(() => ({
+		setSearchInfo({
 			searchTerm: '',
 			sortBy: 'doc_date',
-		sortOrder: 'desc',
-		}));
-		setInput(''); 
+			sortOrder: 'desc',
+		});
+		setInput('');
+		
+		// Additional logic if needed to ensure the slider's initial state remains consistent
+		// Example: If using a ref to control the slider
+		if (sliderRef.current) {
+			sliderRef.current.slickGoTo(0); // Ensure the slider goes to the initial slide if needed
+		}
 	};
 
 	const settings = {
 		dots: false,
 		infinite: false,
 		speed: 500,
-		slidesToShow: 1.8,
+		slidesToShow: 1.6,
 		slidesToScroll: 1,
 		initialSlide: 0,
 	};
@@ -108,7 +114,13 @@ const MobileTradingTuesday = () => {
 	const [selectedValue, setSelectedValue] = useState('Newest');
 
 	const handleSelectedValue = (event) => {
-		setSelectedValue(event.target.value);
+		const value = event.target.value;
+		setSelectedValue(value);
+		setSearchInfo((prevInfo) => ({
+			...prevInfo,
+			sortBy: 'doc_date',
+			sortOrder: value === 'Newest' ? 'desc' : 'asc',
+		}));
 	};
 
 	return (
@@ -181,11 +193,6 @@ const MobileTradingTuesday = () => {
 										value="Oldest"
 									>
 										Oldest
-									</option>
-									<option
-										value="MostPopular"
-									>
-										Most Popular
 									</option>
 								</select>
 							</div>
