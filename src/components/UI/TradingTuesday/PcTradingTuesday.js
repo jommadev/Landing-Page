@@ -42,7 +42,7 @@ const PcTradingTuesday = () => {
 	}, []);
 
 	const { data, isLoading, isSuccess,refetch } = useGetTradingTuesdayListQuery(searchInfo);
-	console.log(data)
+	
 	useEffect(() => {
 		refetch();
 		setSearchItem(data?.data?.searchTitle);

@@ -20,7 +20,7 @@ const Videos = ({ isMobileView }) => {
 		}
 	}, [sliderRef]);
 	const openVideoModal = (videoLink) => {
-		console.log(videoLink);
+		
 		setDataForModal(videoLink);
 		setVideoModalShow(true);
 	};
