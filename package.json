@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "start": "PORT=3001 NODE_ENV=production next start",
+    "start": "NODE_ENV=production next start",
     "build": "next build"
   },
   "dependencies": {
