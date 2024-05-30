@@ -499,6 +499,17 @@
 	height: 16px;
 }
 
+.crossIcon {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	cursor: pointer; /* Optional: Changes the cursor on hover to indicate clickability */
+}
+
+
 .searchInput {
 	padding: 10px 40px;
 	width: 100%;

@@ -14,12 +14,15 @@ const Details = ({slug}) => {
 	const { data, isLoading, isSuccess } = useGetQuestionListQuery(slug);
 
 
+	const width = (details?.data?.INFO_TITLE_EN === 'About Jomma' || 
+	details?.data?.INFO_TITLE_EN === 'Brac EPL Wealth Management product' || 
+	details?.data?.INFO_TITLE_EN === 'IPO (Initial Public Offering)') ? 150 : 80;
 
 
 	return (
 		<>
 			<Head>
-				<title>Details - Jomma</title>
+				<title>{details?.data?.INFO_TITLE_EN} - Jomma</title>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -42,10 +45,9 @@ const Details = ({slug}) => {
 					<Image
 						src={details?.data?.INFO_IMAGE}
 						alt="Jomma Logo"
-						width={150}
+						width={width}
 						height={50}
 						style={{ marginLeft: '-6px' }}
-						className="show-logo-mobile"
 					/>
 					</>
 				}
@@ -63,7 +65,7 @@ const Details = ({slug}) => {
 					></div>
 
 					<div className="details-area">
-						<div className='information-details mb-4'>
+						<div className='information-details'>
 						{
 							details?.data?.INFO_DESC_EN && parse(details?.data?.INFO_DESC_EN)
 						}
@@ -71,7 +73,7 @@ const Details = ({slug}) => {
 						
 						</div>
 
-						<div className='information-details mb-4' style={{ fontFamily: 'Noto Sans Bengali' }}>
+						<div className='information-details' style={{ fontFamily: 'Noto Sans Bengali' }}>
 						{
 							details?.data?.INFO_DESC_BN && parse(details?.data?.INFO_DESC_BN)
 						}
@@ -79,9 +81,15 @@ const Details = ({slug}) => {
 					</div>
 {
 	data?.data?.length > 0 ?
+<>
+<div
+						className="w-100"
+						style={{ height: '1px', backgroundColor: '#EAEAED' }}
+					></div>
 					<div className="mt-3 mt-md-4">
 						<QuestionCard topics={data?.data} topicId={2} title={`Frequently Asked Questions ${details?.data?.INFO_TITLE_EN}`} />
 					</div>
+</>
 					:
 					null
 }

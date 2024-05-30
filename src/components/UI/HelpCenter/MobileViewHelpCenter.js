@@ -81,7 +81,7 @@ const MobileViewHelpCenter = ({ isMobileView }) => {
 	};
 	return (
 		<>
-			<h3 className="text-center mb-4">Populer Topics</h3>
+			<h3 className="text-center mb-4">Popular Topics</h3>
 
 			<div className="container">
 				<div className="slider-container position-relative">

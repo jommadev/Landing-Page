@@ -18,7 +18,7 @@ const Details = ({slug}) => {
 	return (
 		<>
 			<Head>
-				<title>Details - Jomma</title>
+				<title>{details?.data?.INFO_TITLE_EN} - Jomma</title>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -33,7 +33,7 @@ const Details = ({slug}) => {
 					<p className="mb-0">Back</p>
 				</Link>
 				<div className="question-details-area mt-3 mt-md-5">
-				{
+				{/* {
 					details?.data?.INFO_IMAGE &&
 					<>
 
@@ -44,10 +44,9 @@ const Details = ({slug}) => {
 						width={150}
 						height={50}
 						style={{ marginLeft: '-6px' }}
-						className="show-logo-mobile"
 					/>
 					</>
-				}
+				} */}
 					
 					<h1 className="video-section-header mt-2 mb-3 mb-md-4">
 						{details?.data?.INFO_TITLE_EN} |{' '}
@@ -62,7 +61,7 @@ const Details = ({slug}) => {
 					></div>
 
 					<div className="details-area">
-					<div className='information-details mb-4'>
+					<div className='information-details'>
 						{
 							details?.data?.INFO_DESC_EN && parse(details?.data?.INFO_DESC_EN)
 						}
@@ -70,7 +69,7 @@ const Details = ({slug}) => {
 						
 						</div>
 
-						<div className='information-details mb-4' style={{ fontFamily: 'Noto Sans Bengali' }}>
+						<div className='information-details' style={{ fontFamily: 'Noto Sans Bengali' }}>
 						{
 							details?.data?.INFO_DESC_BN && parse(details?.data?.INFO_DESC_BN)
 						}
@@ -79,9 +78,16 @@ const Details = ({slug}) => {
 
 {
 	data?.data?.length > 0 ? 
+
+	<>
+	<div
+						className="w-100"
+						style={{ height: '1px', backgroundColor: '#EAEAED' }}
+					></div>
 					<div className="mt-3 mt-md-4">
 						<QuestionCard topics={data?.data} topicId={2} title={`More Questions ${data?.data[0]?.PARENT_INFO_TITLE}`} />
 					</div>
+	</>
 					:
 					null
 }

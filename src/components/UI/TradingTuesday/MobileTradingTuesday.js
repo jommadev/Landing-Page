@@ -1,4 +1,5 @@
 import searchIcon from '@/assets/images/search_icon.svg';
+import deleteIcon from '@/assets/images/delete-search-icon.png';
 import next from '@/assets/images/trading-next.svg';
 import previous from '@/assets/images/trading-previous.svg';
 import TradingTuesdayImg from '@/assets/images/trading_tuesday.svg';
@@ -52,11 +53,20 @@ const MobileTradingTuesday = () => {
 		}
 	}, [sliderRef]);
 
+	const handleClear = () => {
+		setSearchInfo(() => ({
+			searchTerm: '',
+			sortBy: 'doc_date',
+		sortOrder: 'desc',
+		}));
+		setInput(''); 
+	};
+
 	const settings = {
 		dots: false,
 		infinite: false,
 		speed: 500,
-		slidesToShow: 2.3,
+		slidesToShow: 1.8,
 		slidesToScroll: 1,
 		initialSlide: 0,
 	};
@@ -122,6 +132,15 @@ const MobileTradingTuesday = () => {
 											value={input}
 											onChange={(e) => handleChange(e.target.value)}
 										/>
+										{
+		input &&
+	<Image
+		src={deleteIcon}
+		alt="Clear Icon"
+		className={`${styles.crossIcon}`}
+		onClick={handleClear}
+	/>
+	}
 									</div>
 								</div>
 								{input && openSearchList && results && results.length > 0 && (
@@ -175,7 +194,7 @@ const MobileTradingTuesday = () => {
 				</div>
 			</div>
 
-			<div className="container px-0 ">
+			<div className="container">
 				<div className="slider-container position-relative">
 				{isMobileView ? (
 						<Image
@@ -201,8 +220,8 @@ const MobileTradingTuesday = () => {
 							<Image
 								src={item?.DOC_IMAGE}
 								alt="Jomma Trading Tuesday"
-								width={250}
-								height={250}
+								width={200}
+								height={200}
 								className="pe-2 pe-lg-4 pb-0" style={{cursor:'pointer'}}
 							/>
 							</Link>

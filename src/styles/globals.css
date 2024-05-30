@@ -1914,6 +1914,14 @@ table.custom-stripe tr {
 	margin: 56px 0;
 }
 
+.information-details {
+	margin-bottom: 48px;
+}
+.information-details p{
+	color: #1E1E24;
+	margin-bottom: 8px;
+}
+
 
 @media only screen and (max-width: 576px) {
 	.indexs-info{
@@ -1937,11 +1945,15 @@ table.custom-stripe tr {
 		margin: 40px 0;
 	}
 
+	.information-details {
+		margin-bottom: 32px;
+	}
+	.information-details p{
+		margin-bottom: 6px;
+	}
+
 	
 
 }
 
-.information-details p{
-	color: #1E1E24;
-	margin-bottom: 6px;
-}
+

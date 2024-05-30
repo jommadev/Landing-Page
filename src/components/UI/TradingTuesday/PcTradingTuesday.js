@@ -1,4 +1,5 @@
 import searchIcon from '@/assets/images/search_icon.svg';
+import deleteIcon from '@/assets/images/delete-search-icon.png';
 import next from '@/assets/images/trading-next.svg';
 import previous from '@/assets/images/trading-previous.svg';
 import TradingTuesdayImg from '@/assets/images/trading_tuesday.svg';
@@ -52,6 +53,16 @@ const PcTradingTuesday = () => {
 		}
 	}, [sliderRef]);
 
+	const handleClear = () => {
+		setSearchInfo(() => ({
+			searchTerm: '',
+			sortBy: 'doc_date',
+		sortOrder: 'desc',
+		}));
+		setInput(''); 
+	};
+	
+
 	const settings = {
 		dots: false,
 		infinite: false,
@@ -64,17 +75,6 @@ const PcTradingTuesday = () => {
 		}
 	};
 
-	const mobileSettings = {
-		dots: false,
-		infinite: false,
-		speed: 500,
-		slidesToShow: 2.3,
-		slidesToScroll: 1,
-		initialSlide: 0,
-		afterChange: (current) => {
-			setCurrentSlide(current);
-		}
-	};
 
 	const handleChange = (value) => {
 		setInput(value);
@@ -122,20 +122,29 @@ const PcTradingTuesday = () => {
 						<div className="d-flex justify-content-end">
 							<div className={`${styles.searchBarContainer}`}>
 								<div className="mt-0 d-flex justify-content-center align-items-center">
-									<div className={`${styles.searchContainer} w-100`}>
-										<Image
-											src={searchIcon}
-											alt="Search Icon"
-											className={`${styles.searchIcon}`}
-										/>
-										<input
-											type="text"
-											placeholder={`Search`}
-											className={`${styles.searchInput}`}
-											value={input}
-											onChange={(e) => handleChange(e.target.value)}
-										/>
-									</div>
+								<div className={`${styles.searchContainer} w-100`}>
+	<Image
+		src={searchIcon}
+		alt="Search Icon"
+		className={`${styles.searchIcon}`}
+	/>
+	<input
+		type="text"
+		placeholder={`Search`}
+		className={`${styles.searchInput}`}
+		value={input}
+		onChange={(e) => handleChange(e.target.value)}
+	/>
+	{
+		input &&
+	<Image
+		src={deleteIcon}
+		alt="Clear Icon"
+		className={`${styles.crossIcon}`}
+		onClick={handleClear}
+	/>
+	}
+</div>
 								</div>
 								{input && openSearchList && results && results.length > 0 && (
 					<div className={styles.resultsList}>
