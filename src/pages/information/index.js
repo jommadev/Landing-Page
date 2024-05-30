@@ -42,6 +42,10 @@ const Information = () => {
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 				/>
+				<meta
+					name="description"
+					content="Your Investment Support Hub in Bangladesh. Get expert answers on stocks, bonds, mutual funds, and more.| জমা হেল্প সেন্টার - বাংলাদেশের বিনিয়োগ সহায়তার নির্ভরযোগ্য স্থান। শেয়ার, বন্ড, মিউচুয়াল ফান্ড ও আরও প্রশ্নের উত্তর পান।"
+				/>
 			</Head>
 			<div className="container mt-4">
 				<Link href={'/'} className="back-page-icon">

@@ -63,7 +63,7 @@ const LandingPage = () => {
 				/>
 				<meta
 					name="description"
-					content="Explore Jomma, the premier investment marketplace in Bangladesh. Open BO account, trade stocks, mutual funds, and stay updated with market and financial news. Learn about the stock market with our trading game. Invest with confidence through expert advice from partners like BRAC EPL Investments. Sign up now!"
+					content="Open BO account, invest in stocks, mutual funds and Brac EPL. Learn trading with our game. Join Jomma today. | BO অ্যাকাউন্ট খুলুন, শেয়ার, মিউচুয়াল ফান্ড ও ব্র্যাক ইপিএলে  বিনিয়োগ করুন। আমাদের গেমের মাধ্যমে ট্রেডিং শিখুন। আজই জমায় যোগ দিন!"
 				/>
 				<meta
 					name="keywords"
