@@ -65,10 +65,10 @@ const MobileView = ({ data }) => {
                         aria-controls="pills-indexs"
                         aria-selected="true"
                     >
-                        Stocks
+                        DSE Indices
                     </button>
                 </li>
-                <li className="nav-item" role="presentation">
+               {/*  <li className="nav-item" role="presentation">
                     <button
                         className="nav-link newsFilter"
                         id="pills-top-stocks-tab"
@@ -95,7 +95,7 @@ const MobileView = ({ data }) => {
                     >
                         Top 3 Mutual Funds
                     </button>
-                </li>
+                </li> */}
             </ul>
 
 

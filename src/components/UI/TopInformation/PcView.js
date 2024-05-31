@@ -22,10 +22,10 @@ const PcView = ({data}) => {
 						aria-controls="pills-pc-indexs"
 						aria-selected="true"
 					>
-						Stocks
+						DSE Indices
 					</button>
 				</li>
-				<li className="nav-item" role="presentation">
+				{/* <li className="nav-item" role="presentation">
 					<button
 						className="nav-link newsFilter"
 						id="pills-top-pc-stocks-tab"
@@ -52,7 +52,7 @@ const PcView = ({data}) => {
 					>
 						Top 3 Mutual Funds
 					</button>
-				</li>
+				</li> */}
 			</ul>
 
 			<div className="tab-content mt-3 mb-0 " id="pills-tabContent">
