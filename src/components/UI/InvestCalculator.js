@@ -74,9 +74,9 @@ const InvestCalculator = () => {
 					>
 						Investment Calculator
 					</p> */}
-					<h1 className="text-center video-section-header">
+					<h2 className="text-center video-section-header">
 					Investment Calculator
-				</h1>
+				</h2>
 
 				<div className={`${styles.calculatorInputArea}`}>
 					<div className="d-flex align-items-center mb-2 mb-lg-0">

@@ -40,9 +40,9 @@ const Contact = ({ isMobileView }) => {
 				className="container news-videos-background"
 				style={{ borderRadius: '4px' }}
 			>
-				<h1 className="text-center video-section-header">
+				<h2 className="text-center video-section-header">
 					Interested to Learn More About Jomma?
-				</h1>
+				</h2>
 				<p className="text-center contact-text">
 					Share your contact number, we will contact you soon.
 				</p>

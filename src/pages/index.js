@@ -170,18 +170,18 @@ const LandingPage = () => {
 					className="container news-videos-background"
 					style={{ borderRadius: '4px' }}
 				>
-					<h1 className="text-center video-section-header">
+					<h2 className="text-center video-section-header">
 						Finance Videos Picked For You
-					</h1>
+					</h2>
 					<NewsVideo />
 				</div>
 			</div>
 
 			{/* TODO: google ads */}
 			<div className="container section-margin-v2">
-				<h2 className="text-center video-section-header">
+				<h1 className="text-center video-section-header">
 					Choose Jomma for Your Next Investment
-				</h2>
+				</h1>
 				<Choose />
 				<div className="d-flex justify-content-center">
 					<Link
