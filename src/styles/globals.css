@@ -1922,6 +1922,17 @@ table.custom-stripe tr {
 	margin-bottom: 8px;
 }
 
+.trading-tuesday-file{
+	padding-right: 3rem !important;
+}
+
+@media (min-width: 1400px) {
+    .trading-tuesday-file {
+        padding-right: 1rem !important;
+    }
+}
+
+
 
 @media only screen and (max-width: 576px) {
 	.indexs-info{

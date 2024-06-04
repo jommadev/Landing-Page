@@ -226,7 +226,7 @@ const PcTradingTuesday = () => {
 								alt="Jomma Trading Tuesday"
 								width={250}
 								height={250}
-								className="pe-2 pe-lg-4 pb-0" style={{cursor:'pointer'}}
+								className="trading-tuesday-file pb-0" style={{cursor:'pointer'}}
 							/>
 							</Link>
 						</div>

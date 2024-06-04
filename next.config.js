@@ -13,6 +13,11 @@ const nextConfig = {
         hostname: "app.jomma.online",
         pathname: '**',
       },
+      {
+        protocol: "https",
+        hostname: "staging.jomma.online",
+        pathname: '**',
+      },
     ],
   },
 };

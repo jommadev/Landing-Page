@@ -227,9 +227,9 @@ const MobileTradingTuesday = () => {
 							<Image
 								src={item?.DOC_IMAGE}
 								alt="Jomma Trading Tuesday"
-								width={200}
-								height={200}
-								className="pe-2 pe-lg-4 pb-0" style={{cursor:'pointer'}}
+								width={210}
+								height={210}
+								className="pe-0 pb-0" style={{cursor:'pointer'}}
 							/>
 							</Link>
 						</div>
