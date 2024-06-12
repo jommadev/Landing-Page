@@ -123,6 +123,10 @@ const MobileTradingTuesday = () => {
 		}));
 	};
 
+	const handleClicked = async () => {
+		mixpanel.track('Trading Tuesdays Click', {});
+	};
+
 	return (
 		<>
 			<div className="px-2 px-md-3" >
@@ -223,7 +227,7 @@ const MobileTradingTuesday = () => {
 					{
 						data?.data?.data?.map((item, index) => (
 							<div key={item?.DOC_ID} className="" style={{ border: 'none' }}>
-							<Link href={item?.DOC_LINK} target='_blank'>
+							<Link href={item?.DOC_LINK} target='_blank' onClick={handleClicked}>
 							<Image
 								src={item?.DOC_IMAGE}
 								alt="Jomma Trading Tuesday"

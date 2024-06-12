@@ -3,6 +3,7 @@ import previous from '@/assets/images/news-previous.svg';
 import ShortsModal from '@/components/Shared/Modals/ShortsModal';
 import { useGetNewsVideosQuery } from '@/redux/api/apiSlice';
 import styles from '@/styles/markets/news.module.css';
+import mixpanel from 'mixpanel-browser';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
@@ -76,7 +77,11 @@ const NewsVideo = () => {
 	const [videoType, setVideoType] = useState();
 	const handleModalClose = () => setShortsModalShow(false);
 
-	const handleVideoClick = (data, video_type) => {
+	const handleVideoClick = (data, video_type, video_name) => {
+		mixpanel.track('News Video Click', {
+			'News Video Title': video_name,
+			'Mobile Number': "Unknown User",
+			})
 		setShortsLink(data);
 		setVideoType(video_type);
 		setShortsModalShow(true);
@@ -107,7 +112,7 @@ const NewsVideo = () => {
 							></iframe>
 							<div
 								className={styles.NewsVideosOverlay}
-								onClick={() => handleVideoClick(item?.VIDEO_LINK, item?.VIDEO_TYPE)}
+								onClick={() => handleVideoClick(item?.VIDEO_LINK, item?.VIDEO_TYPE, item?.VIDEO_NAME)}
 							></div>
 						</div>
 					</div>
