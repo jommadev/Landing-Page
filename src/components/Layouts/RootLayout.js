@@ -293,7 +293,7 @@ const RootLayout = ({ children }) => {
                   Go to Help Page
                 </Link>
 
-                <Link
+                {/* <Link
                   href={"tel:09613826566"}
                   className="d-flex align-items-center mt-4 text-decoration-none"
                 >
@@ -301,7 +301,7 @@ const RootLayout = ({ children }) => {
                   <p className="font-18 text-white mb-0 ms-2 footer-text">
                     09613826566
                   </p>
-                </Link>
+                </Link> */}
               </div>
             </div>
 
