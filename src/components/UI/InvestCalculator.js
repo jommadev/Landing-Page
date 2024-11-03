@@ -217,7 +217,7 @@ const InvestCalculator = () => {
 								</div>
 							</div>
 
-							<div
+							{/* <div
 								className={`${styles.card} p-0`}
 								style={{ cursor: 'pointer' }}
 								onClick={() => handlePageRedirect('mutual')}
@@ -247,7 +247,7 @@ const InvestCalculator = () => {
 										className={`${styles.footerCompanySize}`}
 									/>
 								</div>
-							</div>
+							</div> */}
 						</>
 					)}
 
