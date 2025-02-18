@@ -305,14 +305,14 @@ const RootLayout = ({ children }) => {
               </div>
             </div>
 
-            <p className="text-center mb-0 footer-bottom-text text-white mt-2">
+            {/* <p className="text-center mb-0 footer-bottom-text text-white mt-2">
               Jomma is a service of Jomma Limited, a private limited company
               registered under the Companies Act 1994. Trade License:
               TRAD/DSCC/000223/2020
             </p>
             <p className="text-center mb-0 pb-3 footer-bottom-text text-white mt-0">
               Ventura Iconia, Level 3, House 37, Road 11, Block H, Banani, Dhaka
-            </p>
+            </p> */}
           </div>
         </footer>
       </div>
