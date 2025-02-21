@@ -310,9 +310,9 @@ const RootLayout = ({ children }) => {
               registered under the Companies Act 1994. Trade License:
               TRAD/DSCC/000223/2020
             </p>
-            <p className="text-center mb-0 pb-3 footer-bottom-text text-white mt-0">
+            {/*<p className="text-center mb-0 pb-3 footer-bottom-text text-white mt-0">
               Ventura Iconia, Level 3, House 37, Road 11, Block H, Banani, Dhaka
-            </p>
+            </p>*/}
           </div>
         </footer>
       </div>
